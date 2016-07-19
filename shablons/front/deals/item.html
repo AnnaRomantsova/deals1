@@ -1,0 +1,100 @@
+<!-- tsjnews ITEM -->
+
+
+
+      [%mode/?
+             mode_edit {
+
+               <div class='newsBlock'>
+                  <div class='bodyNews'>
+
+                      <p class="date">[%./name%]</p> <br/>
+                      <span style='float=left; '>
+                         <form action="/tsjnews/i/[%./id%]" method="post">
+                            <input type="hidden" name = "edit_submit" value="1">
+                            <input type="submit" value="" class="rd_bt" title="редактировать">
+                         </form>
+                      </span>
+                      <span style='float=left; '>
+                         <form action="/tsjnews/i/[%./id%]" method="post">
+                            <input type="hidden" name = "del_submit" value="1">
+                            <input type="submit" value="" class="dl_bt" title="удалить" >
+                         </form>
+                      </span>
+                      <p>[%./about%]</p>
+                  </div>
+                  <p class='linkNews'>
+                     <span class='typevisible'>
+                                <!--[%prev/{<span class='visible'><a href="/news/i/[%./prev%]">Предыдущая новость</a></span>}%]-->
+                     <a href="/tsjnews"><img src='/i/news.png' /></a>
+                                 <!--[%next/{<span class='visible'><a href="/news/i/[%./next%]">Следующая новость</a></span>}%]-->
+                     </span>
+                  </p>
+               </div>
+
+             }
+             mode_redact {
+
+              <script>
+                 function form_submit(name)
+                 {
+                    var f = document.forms[name];
+                    f.submit();
+                    return false;
+                 }
+
+                 function check(name)
+                 {
+                    var f = document.forms[name];
+                    //alert(name);
+                    if (val(f,new Array([%fieldsWithoutFail%])) ==true )
+                       form_submit(name);
+
+                 }
+              </script>
+
+              <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+              <div class='newsBlock'>
+                <div class='bodyNews'>
+                <p class="date">Редактирование новости</p> <br/>
+                <form  action="/tsjnews/i/[%./id%]" name="fsave" method="post">
+                  <input type="hidden" name="save_submit" value="1">
+                     <p>Заголовок:</p>
+                     <textarea name="name" id="manage" cols="45" rows="10">[%./name%] </textarea>
+                     <p>Краткое описание:</p>
+                     <textarea name="preview" id="manage" cols="45" rows="10">[%./preview%] </textarea>
+                     <p>Основной текст:</p>
+                     <textarea name="about" id="manage" cols="45" rows="10">[%./about%] </textarea>
+                     <script type="text/javascript">
+                     CKEDITOR.replace( 'about');
+                     </script>
+
+                     <div class="vhod">
+                            <div class="but">  <a href='#' class='greenButtom' onclick="form_submit('fsave')">Сохранить</a></div>
+                            <div class="but"><a href='/tsjnews' class='greenButtom' >Отмена</a> </div>
+                     </div>
+                </form>
+                </div>
+              </div>
+
+             }
+             mode_show {
+               <div class='newsBlock'>
+                  <div class='bodyNews'>
+                      <p><a href='/tsjnews/i/[%id%]'>[%./name%]</a></p> <br/>
+                      <p>[%./about%]</p>
+                  </div>
+                  <p class='linkNews'>
+                     <span class='typevisible'>
+                                <!--[%prev/{<span class='visible'><a href="/news/i/[%./prev%]">Предыдущая новость</a></span>}%]-->
+                     <a href="/tsjnews"><img src='/i/news.png' /></a>
+                                 <!--[%next/{<span class='visible'><a href="/news/i/[%./next%]">Следующая новость</a></span>}%]-->
+                     </span>
+                  </p>
+              </div>
+
+             }
+        %]
+
+<!-- /tsjews ITEM -->
+

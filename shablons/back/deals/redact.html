@@ -1,0 +1,77 @@
+<html>
+<head>
+<LINK rel="stylesheet" type="text/css" href="/_css/back.css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<script type="text/javascript" src="/_js/func_include.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
+<script type="text/javascript">
+        include(new Array('/_js/back/func_validTypeFile.js','/site_builder/includes/show_window/show_window.js','/_js/func_validFields.js'));
+</script>
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+   <tr height="21"><td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+       <td width="100%" nowrap background="/_images/back/sky_title_back2.gif" class="title">
+       [%path/[back/path.html]%]</td>
+       <td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+   </tr>
+</table>
+<br />
+
+[%calend1/include/[]%]
+
+<form action="?save[%add/{_new=1}%][%edit/{=[%./id%]}%]" method="post" enctype="multipart/form-data" onsubmit="return val(this,new Array('name'));">
+<table cellspacing="3" class="form">
+
+    [%tab_fields/{
+    <tr>
+        <td>[%rname%]:</td>
+        <td>[%type/?
+                varchar  {  <input type="text" name="[%./fname%]" id="[%./fname%]" style="width:[%./length%]px" value="[%./value%]">}
+                int  {  <input type="text" name="[%./fname%]" id="[%./fname%]" maxlength="[%./length%]" value="[%./value%]">}
+                text  {<textarea name="[%./fname%]" id="manage" cols="45" rows="10">[%./value%]</textarea>}
+                list  {<select name='[%./fname%]'>
+                           [%./list_table/{ <option value="[%id%]" [%selected%]>[%name%]</option>}%]
+                       </select>
+                }
+
+                date {
+                   <input type="text" id="datepicker" name='[%./fname%]' value="[%./value%]">
+                }
+        %]
+        </td><td>
+
+    </tr>
+
+    }%]
+
+  <!-- <tr><td>Title: </td>
+       <td><input type='text' name='title' value="[%title%]" size=50 class="textinput" /></td>
+   </tr>
+   <tr><td>Description: </td>
+       <td><input type='text' name='description' value="[%description%]" size=50 class="textinput" /></td>
+   </tr>
+   <tr><td>Keywords: </td>
+       <td><input type='text' name='keywords' value="[%keywords%]" size=50 class="textinput" /></td>
+   </tr>
+  -->
+</table>
+
+
+<br /><br />
+
+<br /><br />
+<input type='submit' value='' class='save_but'>&nbsp;&nbsp;
+<input type='button' value='' class='cnsl_but' onclick="location.href='?[%edit/{id_back=[%./id%]}%]';">
+</form>
+</body>
+</html>

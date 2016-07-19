@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+        <head>
+                <meta http-equiv='Content-Type' content='text/html; charset=windows-1251' />
+                 <title>[%title%]</title>
+                 <meta name="Description" content="[%description%]" />
+                 <meta name="Keywords" content="[%keywords%]" />
+
+                <link rel='stylesheet' href='/_css/reset.css' type='text/css' media='screen' />
+                <link rel='stylesheet' href='/_css/slider.css' type='text/css' media='screen' />
+                <link rel='stylesheet' href='/_css/style.css' type='text/css' media='screen' />
+                <link rel='stylesheet' href='/_css/jquery.selectBox.css' type='text/css' media='screen' />
+
+
+                <script type='text/javascript' src='/_js/jquery-1.6.2.min.js'></script>
+
+                <script type='text/javascript' src='/_js/jquery.selectBox.js'></script>
+                <script type='text/javascript' src='/_js/function.js'></script>
+
+                <script type="text/javascript" src="/_js/jquery.form.js"></script>
+                <script type="text/javascript" src="/_js/jquery/jquery.main.js" ></script>
+                <script type="text/javascript" src="/_js/func_validFields.js"></script>
+
+
+        </head>
+        <body>
+        <div class="overlay"></div>
+      <div class="popup-block">
+
+       <div class="lcont">
+                <a href="#" class="close" id="js-enter-close"></a>
+                <div class="lenter">
+                   <div class='centerBlock' style="width : 262px;">
+                        <h3>????</h3>
+                        <form action="/auth" name="vhod" id="vhod"  method="post">
+                            <input type="hidden" name="log_in" value="1">
+                            <label class="input">E-mail:</label> <input class='w100' name="email" type='text' />
+                            <label class="input">??????:</label> <input class='w100' type="password" name="password" />
+                            <br/>
+                            <input type="checkbox" class="right" id="save-me" name="save-me" /> <label for="save-me">????????? ????</label>
+                             <br/>
+                             <br/>
+                            <div class="vhod"><a href='#' id="but_subm" onclick="submit_forms('vhod')" class='greenButtom' >????</a></div>
+                             <br/>
+                             <br/>
+                            <a href="#" class="change js-forgot">?????? ???????</a> <br><br>
+                            <a href="/auth/register/1" class="change">??????????? ??????????</a>
+                        </form>
+                    </div>
+                </div>
+                <div class="lforgot">
+                   <div class='centerBlock' style="width : 262px;">
+                          <h3>???????????? ??????</h3>
+                          <form action="/auth" name="restore" id="restore" method="post">
+                              <input type="hidden" name="repair" value="1">
+                              <label class="input">E-mail:</label> <input class='w100' name="email" type='text' placeholder='??????? E-mail'/>
+                              <br/>
+                              <div class="vhod"><a href='#' onclick="submit_forms('restore')" id="but_restore" class='greenButtom' >????????????</a></div>
+                              <br/>
+                              <br/>
+                              <a href="#" class="change js-enter">????</a><br><br>
+                              <a href="/auth/register/1" class="change">??????????? ??????????</a>
+                          </form>
+                    </div>
+                </div>
+
+        </div>
+
+      </div>
+</div>
+               <div class='topwrap'>
+
+                        <div class='leftMenu'>
+                             <h1>Менеджер лицензий</h1>
+                            <ul>
+                                [%menu_main/[]%]
+                            </ul>
+
+                        </div>
+               </div>
+             <div style="height: 200px"></div>
+              [%section1/[]%] 
+                <div class='content'>
+                        <div class='wrap'>
+                                [%menu_sub/[]%]
+                                <div class='mainBlock' style="width: 80%">
+                                       [%main_section/[]%]
+                                </div>
+                                   
+
+
+                        </div>
+                </div>
+
+                <div class='footer'>
+                        <div class='wrap'>
+                                <p class='bottomMenu'>
+                                      
+
+                                </p>
+                                <p class='razr'>
+
+                                </p>
+                        </div>
+                </div>
+        </body>
+
+</html>

@@ -1,0 +1,61 @@
+<div class='centerBlock'>
+    <p class='date'>Регистрация поставщика</p><br/>
+    [%message/{
+           <span class="message">
+              [%./message%]
+           </span>
+           <br><br>
+    }%]
+
+    <form name='reg' id='reg' action="/auth" method="post">
+      <input type="hidden" name="register">
+      <p class='input'>Эл. почта <br /> <input class='w320' name='email'  value='[%email%]' type='text' placeholder='Введите E-mail'/> </p>
+      <p class='input'>
+              <span class='width50'>
+                      Пароль:  <br /> <input class='w160' name='pass1' type='password' placeholder='Пароль'/>
+              </span>
+              <span class='width50'>
+                      Повторите пароль:  <br /> <input class='w160' name='pass2' type='password' placeholder='Пароль'/>
+              </span>
+      </p>
+      <p class='input'>Наименование организации <br /> <input class='w320' name='name' value='[%name%]' type='text' placeholder='Наименование организации'/></p>
+      <p class='input'>ИНН организации <br /> <input class='w320' name='inn' value='[%inn%]' type='text' placeholder='ИНН организации'/></p>
+      <p class='input'>Город<br />
+      <select name='city' id='city' class='w320'  style="width:360px; " >
+         [%city/{
+          <option value="[%id%]" [%selected%] >[%name%]</option>
+         }%]
+       </select>
+      </p>
+      <p class='input'>Адрес <br /> <input class='w320' name='adress' value='[%adress%]' type='text' placeholder='Адрес'/></p>
+      <p class='input'>Вид деятельности <br />
+      <select name='act_category' id='act_category' class='w320' style="width:360px; "  >
+         [%act_category/{
+          <option value="[%id%]" [%selected%] >[%name%]</option>
+         }%]
+       </select>
+      </p>
+      <p class='input'>Контактное лицо<br /> <input class='w320' name='fio' value='[%fio%]' type='text' placeholder='Контактное лицо'/></p>
+      <p class='input'>Контактный телефон<br /> <input class='w320' name='tel' value='[%tel%]' type='text' placeholder='Контактный телефон'/></p>
+       <!--<p >Логотип:</p><br/>
+
+        [%image1/{
+             <img class="imgSmall"  src="[%src%]"
+                onclick="show_image('[%src%]','Маленькая картинка');" /><br>
+              <a href="#" title="удалить" onclick="submit_forms('del_ph')" class='linkdelBg'></a>
+              <br />Или заменить на:<br />
+        }%]
+      <input type="file" name="image1" size="20" class="textinput" onchange="fileIsImage(this);" /><br />
+      <p class='input'>Адрес сайта<br /> <input class='w320' name='link' value='[%link%]' type='text' placeholder='Адрес'/></p>
+      <p>Описание организации:</p>
+      <textarea name="about" cols="43" rows="10">[%about%]</textarea>
+      -->
+      <br>
+      <p class='input'><input type="checkbox"  value="1" onclick="license(this);">Пользовательское соглашение</p>
+      <p class='input' style="display:none;" id="lic">
+        <textarea name="text" class="w320"  rows="10" cols="" >[%license%]</textarea>
+      </p>
+      <p align='center' class='ischo'><a href='#' onclick="go_register();" id="regbut" class='noactiveButtom'>Зарегистрироваться</a></p>
+
+   </form>
+</div>

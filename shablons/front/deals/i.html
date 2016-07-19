@@ -1,0 +1,186 @@
+<!-- NEWS -->
+
+<script>
+var rusMessages = {
+        serverCommunicationError: 'Ошибка сервера.',
+        loadingMessage: 'Загрузка данных...',
+        noDataAvailable: 'Таблица пуста',
+        addNewRecord: '+ Добавить',
+        editRecord: 'Редактирование',
+        areYouSure: 'Подтверждение',
+        deleteConfirmation: 'Вы уверены в удалении записи?',
+        save: 'Сохранить',
+        saving: 'Сохранение...',
+        cancel: 'Отмена',
+        deleteText: 'Удалить',
+        deleting: 'удаление',
+        error: 'Ошибка',
+        close: 'Закрыть',             
+    };
+    
+
+  function next_step(form_name,val)  {
+	  var el = document.getElementById(val);
+	       //alert(el.value);
+	       el.value = 1;
+	      // alert(el.value);
+	       var f = document.forms[form_name];
+	         //alert(el.value);
+	         f.submit();
+
+	  }
+  
+  
+ 
+
+    
+</script>
+ 
+[%mode/?
+      
+        mode_edit_one {
+               <script>
+                 function form_submit(name)
+                 {
+                    var f = document.forms[name];
+                    f.submit();
+                    return false;
+                 }
+
+                 function check(name)
+                 {
+                    var f = document.forms[name];
+                    //alert(name);
+                    if (val(f,new Array([%fieldsWithoutFail%])) ==true )
+                       form_submit(name);
+
+                 }
+              </script>
+
+            
+  <script src="/jtable/scripts/jquery-1.12.3.min.js" type="text/javascript"></script>
+<script src="/jtable/scripts/jquery-ui-1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+<link href="/jtable/jtable.2.4.0/themes/metro/blue/jtable.min.css" rel="stylesheet" type="text/css" />
+<link href="/jtable/scripts/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<script src="/jtable/jtable.2.4.0/jquery.jtable.min.js" type="text/javascript"></script>            
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+-->
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+    
+    $( "#tabs" ).tabs({
+		 active: [%./active_step%]
+	}); 
+
+   $( "#tabs" ).tabs({
+	  disabled: [ [%./disable%] ]
+	});
+  });  
+
+  </script>
+            
+			
+              <div class='newsBlock'>
+                <div class='bodyNews'>
+                <p class="date">Редактирование</p> <br/>
+                
+                      <div id="tabs">
+		              <ul>
+		              [%./step/{<li><a href="#tabs-[%id%]">[%name%]</a></li>}%]
+					  </ul>
+					  [%./step/{
+						  
+							  <div id="tabs-[%id%]">
+							    <form  action="" name="fsave[%id%]" method="post" enctype="multipart/form-data">
+			                    <input type="hidden" name="save_submit" value="1">
+			                    <input type="hidden" name="id_step" value="[%id%]">
+			                    <input type="hidden" name="parent" value="[%parent%]">				                   
+			                    
+			                    <input type="hidden" name="next_step_edit" id="next_step_edit[%id%]" value="0">
+			                    <input type="hidden" name="id" value="[%id_record%]">
+							    [%fields/{
+							       <p>					
+				                        [%type/?
+				                          varchar  { <p>[%./rname%]:</p>}
+				                          int  {   <p>[%./rname%]:</p>}
+				                          text  { <p>[%./rname%]:</p>}
+				                          list  { <p>[%./rname%]:</p>}
+				                        %]  
+				                        [%type/?
+				                          varchar  {<input type="text" name="[%./fname%]"  maxlength="[%./length%]" value="[%./value%]">}
+				                          int  {  <input type="text" name="[%./fname%]"  maxlength="[%./length%]" value="[%./value%]">}
+				                          text  {<textarea name="[%./fname%]"  cols="45" rows="10">[%./value%]</textarea>}
+				                          list  {<select name='[%./fname%]'>
+							                           [%./list_table/{ <option value="[%id%]" [%selected%]>[%name%]</option>}%]			                           
+							                      </select>
+							                    }
+							              sprav{
+							                  
+      										<script>
+    
+										    $(document).ready(function () {									    	
+										       
+										        
+										        $('#[%./fname%]').jtable({
+										            title: '[%./rname%]',
+										            sorting: true,
+										            defaultSorting: 'name ASC',        
+										            messages: rusMessages,
+										            actions: {
+										            	listAction: '/ajax/acts.php?table=[%./fname%]&parent=[%././parent%]&action=list',
+										                createAction: '/ajax/acts.php?table=[%./fname%]&parent=[%././parent%]&action=create',
+										                updateAction: '/ajax/acts.php?table=[%./fname%]&parent=[%././parent%]&action=update',
+										                deleteAction: '/ajax/acts.php?table=[%./fname%]&parent=[%././parent%]&action=create'
+										            },
+										            fields: {
+										                id: {
+										                    key: true,
+										                    list: false
+										                },
+										                 name: {
+										                    title: 'Наименование',
+										                    width: '40%'
+										                },
+										                cnt: {
+										                    title: 'Количество',
+										                    width: '20%'
+										                }
+										            }
+										        });
+										        
+										        $('#[%./fname%]').jtable('load');
+										    });
+										</script>
+
+                                        <br><br>
+										<div id="[%./fname%]"></div>  
+										      
+							              }      
+				                        %]                      
+				                    </p> 
+				                }%]
+				                <div class="vhod">
+				                    [%next_step/{<div class="but">  <a href='#' class='greenButtom' onclick="next_step('fsave[%./id%]','next_step_edit[%./id%]')">На следующий этап</a></div>}%]
+		                            <div class="but">  <a href='#' class='greenButtom' onclick="form_submit('fsave[%id%]')">Сохранить</a></div>
+		                            <div class="but"><a href='/[%PAR/page%]' class='greenButtom' >Отмена</a> </div>
+		                        </div>  
+		                        </form> 		       
+							   </div>
+						   
+					   }%]
+			          </div>                  
+                     
+               
+                </div>
+              </div>
+             
+         }
+        
+   %]
+
+
+<!-- /NEWS -->
+

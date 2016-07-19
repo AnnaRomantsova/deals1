@@ -1,0 +1,61 @@
+<html>
+<head>
+<title></title>
+<LINK rel="stylesheet" type="text/css" href="/_css/back.css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<SCRIPT language="JavaScript"><!--
+function display_smtp(elem)
+ {
+   if (elem.value=="true")
+      document.getElementById('SMTPconf').style.display='none';
+   else
+      document.getElementById('SMTPconf').style.display='block';
+ }
+//-->
+</SCRIPT>
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+<td width="100%" background="/_images/back/sky_title_back2.gif" class="title">
+<img src="/_images/back/spacer.gif" width="1" height="1">
+Настройки почты
+</td>
+<td width="40"><img src="/_images/back/sky_title_right2.gif" width="41" height="21"></td>
+</tr>
+</table>
+
+<form style='margin-bottom:0' method='POST' action=''>
+<input name="isMail" type="radio" value="true" [%isMail/{checked}%] onclick="display_smtp(this)" /> Использовать стандартную функцию для отправки почты<br>
+<input name="isMail" type="radio" value="false" [%isSMTP/{checked}%] onclick="display_smtp(this)" /> Использовать SMTP
+<div id="SMTPconf" style='margin:0; padding:0; [%disp_smtp/{display:none;}%]'>
+<b>Настройки SMTP:</b><br>
+<table>
+<tr><td colspan=2><input name="auth" type="checkbox" value="1" [%auth/{checked}%] /> Использовать SMTP аутентификацию</td></tr>
+<tr><td>Хост:</td><td><input type='text' name='Host' value="[%Host%]" size="70" class='textinput' /></td></tr>
+<tr><td>Порт:</td><td><input type='text' name='Port' value="[%Port%]" size="70" class='textinput' /></td></tr>
+<tr><td>Имя пользователя:</td><td><input type='text' name='Username' value="[%Username%]" size="70" class='textinput' /></td></tr>
+<tr><td>Пароль:</td><td><input type='text' name='Password' value="[%Password%]" size="70" class='textinput' /></td></tr>
+</table>
+</div>
+<hr>
+<table>
+
+[%sub/{
+
+<tr><td colspan=2 style="padding-top:10px;"><b>Настройки [%caption%]</b></td></tr>
+[%From/{<tr><td>E-mail отправителя:</td><td><input type='text' name='[%./var%]_From' value="[%./From%]" size="40" class='textinput' /></td></tr>}%]
+[%FromName/{<tr><td>Имя отправителя:</td><td><input type='text' name='[%./var%]_FromName' value="[%./FromName%]" size="40" class='textinput' /></td></tr>}%]
+[%recipient/{<tr><td>E-mail получателя:</td><td><input type='text' name='[%./var%]_recipient' value="[%./recipient%]" size="40" class='textinput' /></td></tr>}%]
+[%Subject/{<tr><td>Тема письма:</td><td><input type='text' name='[%./var%]_Subject' value="[%./Subject%]" size="40" class='textinput' /></td></tr>}%]
+
+}%]
+
+</table>
+<input type='submit' class='save_but' name='_save' value='&nbsp;' style="margin-top:5px;">
+<input type='hidden' name='save' value='1' />
+</form>
+</body>
+</html>
+

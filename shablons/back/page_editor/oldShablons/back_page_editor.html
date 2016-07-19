@@ -1,0 +1,31 @@
+<html>
+<head>
+<title></title>
+<LINK rel="stylesheet" type="text/css" href="/_css/back.css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251"> 
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+<td width="100%" background="/_images/back/sky_title_back2.gif" class="title">
+&nbsp;
+Редактор блоков
+</td>
+<td width="40"><img src="/_images/back/sky_title_right2.gif" width="41" height="21"></td>
+</tr>
+</table>
+<form action="page_editor.php" method="post">
+Выберите блок:
+<select name="ed_page_select" onchange="document.forms[0].action='page_editor.php?next';document.forms[0].submit();" class='textinput'>
+%%sub%%
+</select>
+<br><br>
+<div>
+%%content%%
+</div>
+%%checkbox%%
+<input type='submit' name='savepage' value='' class='save_but'>&nbsp;&nbsp;&nbsp;<input type='submit' name='back' value='' class='cnsl_but'>
+</form>
+</body>
+</html>

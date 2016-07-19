@@ -1,0 +1,14 @@
+<!-- PATH -->
+<div class="path">
+[%first/{  <a href="/">Главная</a> / }%]
+[%sub/{
+  [%T/? 
+    A { <a href="/[%./href%]">[%./name%]</a> [%./separator/{ / }%] }
+    S {  }
+  %]
+  
+}%]
+[%last/{ [%name%] }%]
+</div>
+<!-- /PATH -->
+

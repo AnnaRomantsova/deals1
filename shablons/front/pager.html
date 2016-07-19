@@ -1,0 +1,23 @@
+<!-- PAGER -->
+<div class="pager">
+
+[%init_prev/{<div class="prev"><a href="[%./prev%]">Предыдущая</a></div>}%]
+
+<div class="pg">Страница</div>
+
+[%sub/{
+
+[%T/?
+    A { <div class="p"><a href="[%./href%]">[%./page%]</a></div> }
+    S { <div class="s">[%./page%]</div> }
+%]
+
+[%separator/{}%]
+
+}%]
+
+[%init_next/{<div class="next"><a href="[%./next%]">Следующая</a></div>}%]
+
+</div>
+<!-- /PAGER -->
+

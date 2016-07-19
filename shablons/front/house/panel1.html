@@ -1,0 +1,112 @@
+<!-- house PANEL -->
+<form action="/" name="f1" method="post">
+    <input type="hidden" name="id_city"   value="">
+    <input type="hidden" name="id_street" value="">
+    <input type="hidden" name="id_house"  value="">
+    <input type="hidden" name="change_house"  value="">
+</form>
+
+<script>
+  function ch_city(obj)
+  {
+
+      value= obj.options[obj.selectedIndex].value;
+      document.f1.id_city.value = value;
+      document.f1.id_street.value = '';
+      document.f1.id_house.value = '';
+      document.f1.submit();
+  }
+
+  function ch_street(obj)
+  {
+     value= obj.options[obj.selectedIndex].value;
+     var objSel = document.getElementById('city');
+     document.f1.id_city.value = objSel.value;
+     document.f1.id_street.value = value;
+     document.f1.id_house.value = '';
+     document.f1.submit();
+  }
+
+  function ch_house()
+  {
+     var objSel2 = document.getElementById('house');
+     document.f1.id_house.value = objSel2.value;
+    // alert(objSel2.value);
+     var objSel = document.getElementById('city');
+     document.f1.id_city.value = objSel.value;
+     var objSel1 = document.getElementById('street');
+     document.f1.id_street.value = objSel1.value;
+     document.f1.change_house.value = "1";
+     document.f1.submit();
+
+  }
+  function check(obj)
+  {
+     if(obj.options.length == 1)
+       {
+         if( obj.name == 'city') {
+             var objSel = document.getElementById('city');
+             if (objSel.value >0 )  ch_city(obj);
+         };
+         if( obj.name == 'street') {
+             var objSel = document.getElementById('street');
+             if (objSel.value >0 )  ch_street(obj);
+         };
+       //  ch_street(obj);
+
+        // if( obj.name == 'house') ch_house(obj);
+       } ;
+
+  };
+
+  function del_cookie() {
+     var ws=new Date();
+     ws.setDate(1+ws.getDate());
+     document.cookie="id_house=done; path=/; expires="+ ws.toGMTString();
+  };
+</script>
+
+
+
+
+<div class='wrap'>
+    <div class='head'>
+           <a href='#' class='logo'>[%logo%]</a>
+            [%lkabinet/{<div class='namelk'> <a href='/about' onclick="del_cookie();" >Личный кабинет</a></div>}%]
+           <div class='date'>Сегодня: <span>[%date%]</span></div>
+    </div>
+</div>
+
+   <div class='topMenu'>
+        <div class='wrap'>
+
+             <div class='groupselect'>
+                <select name='city' id='city' onfocus="check(this)"; onchange="ch_city(this)" >
+                         <option value="0" [%no_city/{selected}%] disabled style="color:gray;">Выберите город</option>
+                [%sub_city/{
+                         <option value="[%id%]" [%selected%] >[%name%]</option>
+                }%]
+                </select>
+                <select name='street' id='street' onfocus="check(this)"; onchange="ch_street(this)">
+                          <option value="0" [%no_street/{selected}%] disabled>Выберите улицу</option>
+                [%sub_street/{
+                         <option value="[%id%]" [%selected%] >[%name%]</option>
+                }%]
+                </select>
+                <select name='house' id='house' >
+                           <option value="0" [%no_house/{selected}%] disabled>Выберите дом</option>
+                [%sub_house/{
+                         <option value="[%id%]" [%selected%]>[%number%]/[%fract%]</option>
+                }%]
+                 </select>
+              </div>
+          <div class='nameTsj'>
+               <a href="#" onclick="ch_house();">Показать</a>
+          </div>
+        </div>
+   </div>
+
+
+
+
+<!-- /house PANEL -->

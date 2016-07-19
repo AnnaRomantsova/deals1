@@ -1,0 +1,21 @@
+<!-- MENU SUB -->
+
+[%menu/{
+  <div class='tsgMenu'>
+    <ul>
+    [%sub/{
+     [%T/?
+        A  {   <li ><a href="/[%./href%]" class='item[%./num%]'>[%./name%]</a></li> }
+        S  {   <li class="lk"><a href="/[%./href%]" class='item[%./num%] lk'>[%./name%]</a></li> }
+        SA {   <li class="lk"><a href="/[%./href%]" class='item[%./num%] lk'>[%./name%]</a></li> }
+
+     %]
+     [%sep/{ <div class='lineLk'></div> }%]
+    }%]
+     </ul>
+     <br><br>
+ </div>
+}%]
+<!-- /MENU SUB -->
+
+

@@ -1,0 +1,28 @@
+<div class='centerBlock' style="width: 446px; ">
+   <p class='date'>Личный профиль</p><br/>
+   [%message/{
+           <span class="message">
+              [%./message%]
+           </span>
+           <br><br>
+    }%]
+    <form method="POST" name="del_photo" id="del_ph" action="/lk">
+            <input type="hidden" name="del_photo" value="1">
+    </form>
+    <form name='lk' id='lk' action="/lk" method="post" enctype="multipart/form-data">
+
+      <input type='hidden' name='save' value='1'>
+      <p class='input'>Эл. почта <br /> <input class='w320' name='email'  value='[%email%]' type='text' placeholder='Введите E-mail'/> </p>
+      <p class='input'>
+              <span class='width50'>
+                      Пароль:  <br /> <input class='w160' name='pass1' type='password' placeholder='Пароль'/>
+              </span>
+              <span class='width50'>
+                      Повторите пароль:  <br /> <input class='w160' name='pass2' type='password' placeholder='Повторите пароль'/>
+              </span>
+      </p>
+      <p class='input'>Наименование организации <br /> <input class='w320' name='name' value='[%name%]' type='text' placeholder='Наименование организации'/></p>
+      
+      <p align='center' class='ischo'><a href='#' onclick="submit_forms('lk')" class='greenButtom'>Сохранить</a></p>
+   </form>
+</div>

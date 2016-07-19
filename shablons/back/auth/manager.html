@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta name="Copyright" content="Copyright (c) 2006 by Firesite Web-studio" />
+    <link rel="stylesheet" type="text/css" href="/_css/back.css" />
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<script type="text/javascript" src="/_js/func_include.js"></script>
+<script type="text/javascript">
+        T_cp = [%cp%];
+        include(new Array('/_js/back/actionMenu.js', '/_js/back/func_redactRecords.js'));
+</script>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0">
+   <tr><td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+       <td width="100%" nowrap background="/_images/back/sky_title_back2.gif" class="title">
+          [%path/[back/path.html]%]</td>
+       <td width="41"><img src="/_images/back/sky_title_right2.gif" width="41" height="21"></td></tr>
+</table>
+<br />
+
+
+<table cellpadding="0" cellspacing="0" width="100%">
+ <tr valign="top">
+
+[%actions/{
+  <td width="83"><img onmouseover="actionMenu();" onmouseout="actionMenu_close();" src="/_images/back/action.gif" width="83" height="24" style="float:left" /></td>
+  <td>
+<div style="position:absolute; display:none; border:1px solid #919599; background-color:#D9DFE9;" id="actionMenu" onmouseover="clearTimeout(timer);" onmouseout="actionMenu_close();">
+}%]
+
+[%actAdd/{
+<div class="actionMenu" onmouseover="style.color='#06C';" onmouseout="style.color='#374159';" onclick="location.href='?add=1';">
+Добавить</div>
+}%]
+
+[%actClear/{
+<div class="actionMenu" onmouseover="style.color='#06C';" onmouseout="style.color='#374159';"
+onclick="clear_('Вы уверены, что хотите удалить все записи?');">
+Удалить все записи</div>
+}%]
+
+[%actions/{
+</div>
+  </td><td>&nbsp;</td>
+}%]
+
+ </tr>
+</table>
+<br />
+<br />
+
+[%pager/[back/pager.html]%]
+
+[%records/{
+<table  cellspacing=1 class="tbl"><tr><th>id</th><th>Имя пользователя</th><th></th></tr>
+ [%sub/{
+  <tr>
+   <td>[%id%]</td>
+   <td>[%fio%]</td>
+  
+
+   <td nowrap>
+             [%butRedact/{<input type="button" value="" class="rd_bt" title="редактировать" onclick="red([%./id%]);">}%]
+             [%butDelete/{<input type="button" value="" class="dl_bt" title="удалить" onclick="del([%./id%]);">}%]
+   </td>
+  </tr>
+ }%]
+</table>
+}%]
+
+[%pager/[back/pager.html]%]
+
+</body>
+</html>

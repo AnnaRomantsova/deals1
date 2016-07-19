@@ -1,0 +1,50 @@
+ <h3>[%PAR/path/[front/path.html]%]</h3>
+</br>
+
+[%saved/{<div class=message>Данные сохранены!</div>}%]
+
+ <form action="/cabinet" method="post">
+  <input type="hidden" name="cab_new" value="a">
+
+            <table class=form-onpage>
+             <tr>
+                  <td class=aleft><label class="input">E-mail:</label> </td>
+                  <td class=aleft><label class="input">[%email%]</label> </td>
+             </tr>
+             <tr>
+                   <td class=aleft><label class="input">Пароль:</label></td>
+                   <td class=aleft><input  type="password" name="password" />
+                   <div class=note>Заполните, если Вы хотите изменить пароль.</div>
+                   </td>
+             </tr>
+             <tr>
+                   <td class=aleft><label class="input">Фамилия:</label></td>
+                   <td class=aleft><input  type="text" name="surname" value="[%surname%]"/></td>
+             </tr>
+             <tr>
+                   <td class=aleft><label class="input">Имя:</label></td>
+                   <td class=aleft><input  type="text" name="name" value="[%name%]"/></td>
+             </tr>
+             <tr>
+                   <td class=aleft><label class="input">Отчество:</label></td>
+                   <td class=aleft><input  type="text" name="sec_name" value="[%secname%]" /></td>
+             </tr>
+             <tr>
+                   <td class=aleft><label class="input">Контактный телефон:</label></td>
+                   <td class=aleft><input  type="text" name="tel" value="[%tel%]"/></td>
+             </tr>
+             <tr>
+                    <td class=aleft><label class="input">Адрес:</label></td>
+                    <td class=aleft><input  type="text" name="adress" value="[%adress%]"/></td>
+             </tr>
+             <tr>
+                    <td class=aleft><label class="input">Компания:</label></td>
+                    <td class=aleft><input  type="text"  name="company" value="[%company%]"/></td>
+             </tr>
+             <tr>
+                     <td></td>
+                     <td class=aleft><input type="submit" class="right img" value="Сохранить" /> </td>
+              </tr>
+           </table>
+
+ </form>

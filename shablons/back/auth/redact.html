@@ -1,0 +1,43 @@
+<html>
+<head>
+<LINK rel="stylesheet" type="text/css" href="/_css/back.css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<script type="text/javascript" src="/_js/func_include.js"></script>
+<script type="text/javascript">
+        include(new Array('/_js/back/func_validTypeFile.js','/site_builder/includes/show_window/show_window.js','/_js/func_validFields.js'));
+</script>
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+   <tr height="21"><td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+       <td width="100%" nowrap background="/_images/back/sky_title_back2.gif" class="title">
+       [%path/[back/path.html]%]</td>
+       <td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+   </tr>
+</table>
+<br />
+
+
+<form action="?save[%add/{_new=1}%][%edit/{=[%./id%]}%]" method="post" enctype="multipart/form-data" onsubmit="return val(this,new Array('name','surname','email','pass_text'));">
+<table cellspacing="3" class="form">
+   <tr><td></td><td width="100%"></td></tr>
+   
+   <tr><td>*Имя</td>
+       <td><input type='text' name='name' value="[%name%]" size=50 class="textinput" /></td></tr>
+   <tr><td>*e-mail</td>
+       <td><input type='text' name='email' value="[%email%]" size=50 class="textinput" /></td></tr>
+   <tr><td>*Пароль</td>
+       <td><input type='text' name='pass_text' value="[%pass_text%]" size=50 class="textinput" /></td></tr>
+       <input type='hidden' name='is_chairman' value="1" />
+
+</table>
+
+
+<br /><br />
+
+<br /><br />
+<input type='submit' value='' class='save_but'>&nbsp;&nbsp;
+<input type='button' value='' class='cnsl_but' onclick="location.href='?[%edit/{id_back=[%./id%]}%]';">
+</form>
+</body>
+</html>

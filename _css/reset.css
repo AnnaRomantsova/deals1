@@ -1,0 +1,17 @@
+html, body, div, span, p, a, input, img{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	background: transparent;
+	font-family: Century Gothic, Tahoma;
+	font-size: 12px;
+	color: #333333;
+}
+body{
+	
+}
+a{
+	text-decoration: underline;
+}

@@ -1,0 +1,131 @@
+<html>
+<head>
+<LINK rel="stylesheet" type="text/css" href="/_css/back.css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<script type="text/javascript" src="/_js/func_include.js"></script>
+<script type="text/javascript">
+        include(new Array('/_js/back/func_validTypeFile.js','/site_builder/includes/show_window/show_window.js','/_js/func_validFields.js'));
+</script>
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+   <tr height="21"><td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+       <td width="100%" nowrap background="/_images/back/sky_title_back2.gif" class="title">
+       [%path/[back/path.html]%]</td>
+       <td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+   </tr>
+</table>
+<br />
+
+[%calend1/include/[]%]
+
+<form action="?save[%add/{_new=1}%][%edit/{=[%./id%]}%]" method="post" enctype="multipart/form-data" onsubmit="return val(this,new Array('date','time','name'));">
+<table cellspacing="3" class="form">
+   <tr><td></td><td width="100%"></td></tr>
+   <tr><td>*Дата (DD.MM.YYYY):</td>
+                <td><input type="text" name='date' value="[%date%]" [%calend1/{id="date[%n%]"}%] size="10" maxlength="10" class='textinput' />[%calend1/button/[]%]
+                </td>
+        </tr>
+   <tr><td></td><td>[%calend1/calend/[]%]</td>
+        </tr>
+   <tr><td>*Время (HH:ii):</td>
+                <td><input type="text" name='time' value="[%time%]" size="5" maxlength="5" class='textinput' /></td></tr>
+   <tr><td>*Имя</td>
+       <td><input type='text' name='name' value="[%name%]" size=50 class="textinput" /></td></tr>
+   <tr><td>Title: </td>
+       <td><input type='text' name='title' value="[%title%]" size=50 class="textinput" /></td>
+   </tr>
+   <tr><td>Description: </td>
+       <td><input type='text' name='description' value="[%description%]" size=50 class="textinput" /></td>
+   </tr>
+   <tr><td>Keywords: </td>
+       <td><input type='text' name='keywords' value="[%keywords%]" size=50 class="textinput" /></td>
+   </tr>
+   <tr><td style="padding-top:5px;" colspan="2">Превью:</td></tr>
+   <tr><td style="padding-top:5px;" colspan="2">
+     <textarea name="preview" id="preview" cols="60" rows="10"> [%preview%]</textarea>
+    </td></tr>
+   <tr><td style="padding-top:5px;" colspan="2">Текст:</td></tr>
+   <tr><td style="padding-top:5px;" colspan="2">[%(eval($root->about);)%]</td></tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+   <tr><td height="30">&nbsp;</td></tr>
+   <tr valign="bottom">
+       <td>Маленькая картинка:
+       <br />
+
+       [%image1/{
+
+        <img class="imgSmall" onload="img_resize(this,80,80)" src="[%src%]"
+          onclick="show_image('[%src%]','Маленькая картинка');" />
+         <br clear="all" /> Удалить <input name="d_image1" type="checkbox" value="1"><br />Или заменить на:<br />
+
+
+       }%]
+           <input type="file" name="image1" size="20" class="textinput" onchange="fileIsImage(this);" /><br />
+           Сохранить название <input name="kn_image1" type="checkbox" value="1" /><br />
+           Alt: <br/><input type='text' name='alt1' value="[%alt1%]" size=30 class="textinput" />
+
+
+     </td>
+     </tr>
+     <!--
+         <td>Большая картинка:
+       <br />
+
+       [%image2/{
+
+        <img class="imgSmall" onload="img_resize(this,100,50)" src="[%src%]"
+          onclick="show_image('[%src%]','Большая картинка');" />
+         <br clear="all" /> Удалить <input name="d_image2" type="checkbox" value="1"><br />Или заменить на:<br />
+
+
+       }%]
+           <input type="file" name="image2" size="20" class="textinput" onchange="fileIsImage(this);" /><br />
+           Сохранить название <input name="kn_image2" type="checkbox" value="1"><br />
+           Alt: <br/><input type='text' name='alt2' value="[%alt2%]" size=30 class="textinput" />
+
+
+     </td>
+
+
+   </tr>
+   <tr><td height="30"></td></tr>
+
+   <tr valign="bottom">
+
+
+         <td>Очень большая картинка:
+       <br />
+
+       [%image3/{
+
+        <img class="imgSmall" onload="img_resize(this,100,50)" src="[%src%]"
+          onclick="show_image('[%src%]','Очень большая картинка');" />
+         <br clear="all" /> Удалить <input name="d_image3" type="checkbox" value="1"><br />Или заменить на:<br />
+
+
+       }%]
+           <input type="file" name="image3" size="20" class="textinput" onchange="fileIsImage(this);" /><br />
+           Сохранить название <input name="kn_image3" type="checkbox" value="1"><br />
+           Alt: <br/><input type='text' name='alt3' value="[%alt3%]" size=30 class="textinput" />
+
+
+     </td>
+
+
+   </tr>
+   -->
+</table>
+<br /><br />
+<input name="pabl" type="checkbox" value="1" [%pabl/? 1 {checked}%] [%add/{checked}%] /> Опубликовать на сайте<br>
+<input name="ntype" type="hidden" value="1" />
+<input name="watch" type="hidden" value="0" /> 
+[%addRss/[]%]
+<br /><br />
+<input type='submit' value='' class='save_but'>&nbsp;&nbsp;
+<input type='button' value='' class='cnsl_but' onclick="location.href='?[%edit/{id_back=[%./id%]}%]';">
+</form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<script src="/jtable/scripts/jquery-1.12.3.min.js" type="text/javascript"></script>
+<script src="/jtable/scripts/jquery-ui-1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+<link href="/jtable/jtable.2.4.0/themes/metro/blue/jtable.min.css" rel="stylesheet" type="text/css" />
+<link href="/jtable/scripts/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<script src="/jtable/jtable.2.4.0/jquery.jtable.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+     
+    
+    $(document).ready(function () {
+    	
+        var rusMessages = {
+                serverCommunicationError: 'Ошибка сервера.',
+                loadingMessage: 'Загрузка данных...',
+                noDataAvailable: 'Таблица пуста',
+                addNewRecord: '+ Добавить',
+                editRecord: 'Редактирование',
+                areYouSure: 'Вы уверены?',
+                deleteConfirmation: 'Вы уверены в удалении записи?',
+                save: 'Сохранить',
+                saving: 'Kaydediyor',
+                cancel: 'Отмена',
+                deleteText: 'Удалить',
+                deleting: 'удаление',
+                error: 'Ошибка',
+                close: 'Закрыть',
+                cannotLoadOptionsFor: '{0} alan? icin secenekler yuklenemedi!',
+                pagingInfo: 'Страница {2}, {0} из {1} ',
+                canNotDeletedRecords: '{1} kay?ttan {0} adedi silinemedi!',
+                deleteProggress: '{1} kay?ttan {0} adedi silindi, devam ediliyor...'
+            };
+        
+        $('#PersonTableContainer').jtable({
+            title: 'Расходные материалы',
+            sorting: true,
+            defaultSorting: 'name ASC',        
+            messages: rusMessages,
+            actions: {
+            	listAction: '/ajax/acts.php?action=list',
+                createAction: '/ajax/acts.php?action=create',
+                updateAction: '/ajax/acts.php?action=update',
+                deleteAction: '/ajax/acts.php?action=create'
+            },
+            fields: {
+                id: {
+                    key: true,
+                    list: false
+                },
+                 name: {
+                    title: 'Наименование',
+                    width: '40%'
+                },
+                cnt: {
+                    title: 'Количество',
+                    width: '20%'
+                }
+            }
+        });
+        
+        $('#PersonTableContainer').jtable('load');
+    });
+</script>
+
+
+<div id="PersonTableContainer"></div>

@@ -1,0 +1,13 @@
+<div style="text-align:center;padding:10px">
+Страницы:
+
+[%init_prev/ { <a href="[%./prev%]">&larr; предыдущая</a> }%]
+
+[%sub/T/?
+    A {  <a href="[%./href%]">[%./page%]</a> }
+    S {  [<span class="bold">[%./page%]</span>] }
+%]
+
+[%init_next/ { <a href="[%./next%]">следующая &rarr;</a> }%]
+
+</div>

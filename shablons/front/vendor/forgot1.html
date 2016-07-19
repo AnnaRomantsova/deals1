@@ -1,0 +1,14 @@
+<div class='centerBlock'>
+    [%message/{
+           <span class="message">
+              [%./message%]
+           </span>
+           <br><br>
+    }%]
+  <form action="/vendor_auth" method="post" id="forgot">
+     <input type="hidden" name="repair"/>
+     <p class='input'>Эл. почта <br /> <input class='w160' name='e_mail'  value='[%email%]' type='text' placeholder='Введите E-mail'/> </p>
+     <br><br><br><br>
+     <div class="vhod"><a href='#' onclick="submit_forms('forgot')" class='greenButtom'>Восстановить</a></div>
+  </form>
+</div>

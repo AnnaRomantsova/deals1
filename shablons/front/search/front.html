@@ -1,0 +1,67 @@
+<!-- search-->
+<script type="text/javascript" src="/_js/lb2/prototype.js"></script>
+<script type="text/javascript" src="/_js/lb2/scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="/_js/lb2/lightbox.js"></script>
+<link rel="stylesheet" href="/_css/lightbox.css" type="text/css" media="screen" />
+<h3><a href="/catalog">Каталог товаров</a> / Результаты поиска "[%word_titul%]" <span class=cnt>([%cnt%])</span></h3>
+
+[%less/{
+[%./subs/{
+  <h3> [%subpatch/[front/path.html]%] <span class=cnt>([%cnt%])</span></h3>
+
+<table>
+  <thead>
+                                        <tr>
+                                                <td class="first">&nbsp;</td>
+                                                <td class="aleft js-hover [%./art%] ">
+                                                       <b>Автор</b>
+
+
+                                                </td>
+                                                <td class="aleft js-hover [%./name%]">
+                                                        <b>Наименование</b>
+
+                                                </td>
+
+
+                                                <td >&nbsp;</td>
+                                        </tr>
+                                </thead>
+[%sub/{
+          <tr [%gray%]>
+              <td class="rel">
+                 [%image1/{
+                     [%./image2/{<a href="[%./image2/{ [%src%] }%]" rel="lightbox[gal]">}%]
+                     <img src="[%./image1/{ [%src%] }%]"  />
+                  }%]
+                     [%image2/{ </a> }%]
+                  [%image2/{<a href="[%./image2/{ [%src%] }%]" rel="lightbox[gal]" class="plus"></a>}%]
+
+              </td>
+
+              <td class="aleft">[%autor%]</td>
+              <td class="aleft">[%name%]</td>
+
+              <td>
+
+               <a href="#" class="cash" product="[%id%]" max="[%max%]" start="1" [%cnt_order/{visual="[%./cnt_order%]"}%]  price="[%price_rozn_rub%]">В корзину</a>
+             </td>
+           </tr>
+
+
+}%]
+
+     </tbody>
+ </table>
+}%]
+}%]
+
+<div>[%pager/[front/pager.html]%]</div>
+[%nothing/{<div>Ничего не найдено..</div> }%]
+[%more/{
+
+[%./sub/{
+   <h3 class=groups> [%subpatch/[front/path.html]%] <span class=cnt>([%cnt%])</span></h3>
+
+}%]
+}%]

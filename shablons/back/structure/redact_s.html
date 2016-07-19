@@ -1,0 +1,42 @@
+<html>
+<head>
+<LINK rel="stylesheet" type="text/css" href="/_css/back.css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+   <tr height="21"><td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+       <td width="100%" nowrap background="/_images/back/sky_title_back2.gif" class="title">
+       [%path/[back/path.html]%]</td>
+       <td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+   </tr>
+</table>
+<br>
+
+<form action="?[%edit/{sct_back=[%./sct_back%]}%][%add/{sct_back=[%./id%]}%]&save[%add/{_new}%]=[%id%]&type=s&save_last=1" method="post" enctype="multipart/form-data">
+<table cellspacing="0" width="100%" class="form">
+   <tr><td></td><td width="100%"></td></tr>
+   <tr><td>Название: </td>
+   	   <td><input type='text' name='name' value="[%name%]" size=50 class="textinput" /></td></tr>
+   <tr><td>Title: </td>
+       <td><input type='text' name='title' value="[%title%]" size="50" class="textinput" /></td>
+   </tr>
+   <tr><td>Description: </td>
+       <td><input type='text' name='description' value="[%description%]" size="50" class="textinput" /></td>
+   </tr>
+   <tr><td>Keywords: </td>
+       <td><input type='text' name='keywords' value="[%keywords%]" size="50" class="textinput" /></td>
+   </tr>
+	   
+</table>
+<br /><br />
+<input name="pabl" type="checkbox" value="1" [%pabl/? 1 {checked}%] [%add/{checked}%] /> Опубликовать на сайте<br />
+<input name="menu" type="checkbox" value="1" [%menu/? 1 {checked}%] [%add/{checked}%] /> Выводить в меню<br />
+<input name="parent" type="hidden" value="[%parent%]" />
+<input name="section" type="hidden" value="1" />
+<br /><br />
+<input type='submit' value='' class='save_but'>&nbsp;&nbsp;
+<input type='button' value='' class='cnsl_but' onclick="location.href='?sct=[%add/{[%./id%]}%][%edit/{[%./sct_back%]}%]';">
+</form>
+</body>
+</html>

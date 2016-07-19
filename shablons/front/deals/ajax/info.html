@@ -1,0 +1,11 @@
+Информация о закупке № [%number%]<hr>
+<table>[%tab_fields/{
+                       <tr>
+                        [%type/?
+                          varchar  { <td><b>[%./rname%]:</b></td> <td width = "60%">[%./value%]</td>}
+
+                        %]
+                        </tr>
+
+                      }%]
+</table>

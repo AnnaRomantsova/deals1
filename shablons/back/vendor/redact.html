@@ -1,0 +1,80 @@
+<html>
+<head>
+<LINK rel="stylesheet" type="text/css" href="/_css/back.css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<script type="text/javascript" src="/_js/func_include.js"></script>
+<script type="text/javascript">
+        include(new Array('/_js/back/func_validTypeFile.js','/site_builder/includes/show_window/show_window.js','/_js/func_validFields.js'));
+</script>
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+   <tr height="21"><td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+       <td width="100%" nowrap background="/_images/back/sky_title_back2.gif" class="title">
+       [%path/[back/path.html]%]</td>
+       <td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+   </tr>
+</table>
+<br />
+
+
+<form action="?save[%add/{_new=1}%][%edit/{=[%./id%]}%]" method="post" enctype="multipart/form-data" onsubmit="return val(this,new Array('name','surname','email','pass_text'));">
+<table cellspacing="3" class="form">
+   <tr><td></td><td width="100%"></td></tr>
+   <tr><td>Организация</td>
+       <td><input type='text' name='name' value="[%name%]" size=50 class="textinput" />
+   </td></tr>
+   <tr><td>Вид деятельности </td>
+       <td><select name='act_category' id='act_category' class='w320' >
+           [%act_category_sub/{
+              <option value="[%id%]" [%selected%] >[%name%]</option>
+           }%]
+          </select>
+       </td></tr>
+   <tr><td>Город </td>
+       <td><select name='id_city' id='id_city' class='w320' >
+           [%city/{
+              <option value="[%id%]" [%selected%] >[%name%]</option>
+           }%]
+          </select>
+       </td></tr>
+   <tr><td>ИНН</td>
+       <td><input type='text' name='inn' value="[%inn%]" size=50 class="textinput" /></td></tr>
+   <tr><td>Контактное лицо</td>
+       <td><input type='text' name='fio' value="[%fio%]" size=50 class="textinput" /></td></tr>
+   <tr><td>Контактное телефон</td>
+       <td><input type='text' name='tel' value="[%tel%]" size=50 class="textinput" /></td></tr>
+   <tr><td>Адрес</td>
+       <td><input type='text' name='adress' value="[%adress%]" size=50 class="textinput" /></td></tr>
+   <tr><td>Адрес сайта</td>
+       <td><input type='text' name='link' value="[%link%]" size=50 class="textinput" /></td></tr>
+   <tr><td>Описание</td>
+       <td><textarea name="about" id="about" cols="40" rows="10"> [%about%]</textarea></td></tr>
+
+   <tr><td>*e-mail</td>
+       <td><input type='text' name='email' value="[%email%]" size=50 class="textinput" /></td></tr>
+   <tr><td>*Пароль</td>
+       <td><input type='text' name='pass_text' value="[%pass_text%]" size=50 class="textinput" /></td></tr>
+
+
+  <!-- <tr><td>Title: </td>
+       <td><input type='text' name='title' value="[%title%]" size=50 class="textinput" /></td>
+   </tr>
+   <tr><td>Description: </td>
+       <td><input type='text' name='description' value="[%description%]" size=50 class="textinput" /></td>
+   </tr>
+   <tr><td>Keywords: </td>
+       <td><input type='text' name='keywords' value="[%keywords%]" size=50 class="textinput" /></td>
+   </tr>
+  -->
+</table>
+
+
+<br /><br />
+
+<br /><br />
+<input type='submit' value='' class='save_but'>&nbsp;&nbsp;
+<input type='button' value='' class='cnsl_but' onclick="location.href='?[%edit/{id_back=[%./id%]}%]';">
+</form>
+</body>
+</html>

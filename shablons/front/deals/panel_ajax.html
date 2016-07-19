@@ -1,0 +1,26 @@
+<!-- NEWS PANEL -->
+ [%theend%]
+
+[%sub/{
+  <p class='date'>[%datetime%] </p>
+    [%sub1/{
+     <div class='newsBlock' style="width: 447px; ">
+               <div class='bodyNews'>
+
+                       [%image1/{<img class='img'  src="[%src%]" width="80" height="80" alt="[%./alt1%]" />}%]
+                       <p><a href="/[%ntype%]/i/[%id%]">[%name%]</a></p>
+                       <p>[%preview%] </p>
+               </div>
+               <p class='linkNews'><br>
+                       <a href="/[%ntype%]/i/[%id%]" class='daleeBg'></a>
+                       <span class='typevisible'>
+                               <a href="/[%ntype%]" class='linknewsBg'></a>
+                               <span class='visible'>Просмотров: [%watch%]</span>
+                       </span>
+               </p>
+     </div>
+   }%]
+}%]
+
+
+<!-- /NEWS PANEL -->

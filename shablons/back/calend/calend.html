@@ -1,0 +1,42 @@
+<div id="calend[%n%]" class="calend" onclick="event.cancelBubble=true;">
+<table cellpadding="2" class="calendup">
+<tr>
+<td rowspan="2"><a href="#" onclick="back([%n%]); return false;"><img src="[%imgPath%]l.gif" /></a></td>
+<td rowspan="2">
+ <select id="month[%n%]" onChange="changeM([%n%])">
+  <option value="0">Январь</option>
+  <option value="1">Февраль</option>
+  <option value="2">Март</option>
+  <option value="3">Апрель</option>
+  <option value="4">Май</option>
+  <option value="5">Июнь</option>
+  <option value="6">Июль</option>
+  <option value="7">Август</option>
+  <option value="8">Сентябрь</option>
+  <option value="9">Октябрь</option>
+  <option value="10">Ноябрь</option>
+  <option value="11">Декабрь</option>
+ </select>
+</td>
+<td rowspan="2"><a href="#" onclick="forward([%n%]); return false;"><img src="[%imgPath%]r.gif" /></a></td>
+<td rowspan="2" class="calendyear"><span id="year[%n%]"> &nbsp; </span></td>
+<td class="calendyear"><a href="#" onclick="yup([%n%]); return false;"><img src="[%imgPath%]up.gif" /></a></td>
+</tr>
+<tr>
+ <td class="calendyear"><a href="#" onclick="ydown([%n%]); return false;"><img src="[%imgPath%]down.gif" /></a></td>
+</tr>
+</table>
+<div class="calenddays">
+<span class="calenddaysth">
+<div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+</span>
+<br clear="all" />
+<span id="days[%n%]"> &nbsp; </span>
+</div>
+</div>
+
+<script type="text/javascript">
+if (isDOM && document.getElementById('calend[%n%]').style) document.getElementById('calend[%n%]').style.display = 'none';
+</script>
+
+

@@ -1,0 +1,23 @@
+<!-- SEARCH PANEL -->
+<script type="text/javascript"><!--
+function check_search(f) {
+        if (!f.word.value [%not_value/{|| !f.word}%] ) {
+          alert('Введите фразу поиска.');
+        }
+        else
+          return true;
+        return false;
+}
+//-->
+</script>
+
+<form action="/search" method="post" onsubmit="return check_search(this);" class="search">
+        <input type="text" id="q" class="text"  name="word" value="[%value%]" [%not_value/{onclick="if (!this.act) {this.value=''; this.act=true};" onfocus="onclick();"}%] />
+        <input name="" value="Найти" type="submit" class="submit"  />
+        <div>
+             Например: <b>[%word%]</b>
+        </div>
+
+</form>
+<!-- /SEARCH PANEL -->
+

@@ -1,0 +1,139 @@
+<html>
+<head>
+    <meta name="Copyright" content="Copyright (c) 2006 by Firesite Web-studio" />
+    <link rel="stylesheet" type="text/css" href="/_css/back.css" />
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<script type="text/javascript" src="/_js/func_include.js"></script>
+<script type="text/javascript">
+	T_id = [%id%];
+	include(new Array('/_js/back/actionMenu.js', '/_js/back/func_redactCatalog.js'));
+	function menu(id,type) {
+  		location.href='?sct_back='+T_id+'&menu='+id+'&type='+type;
+	}
+</script>
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0">
+   <tr><td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+       <td width="100%" nowrap background="/_images/back/sky_title_back2.gif" class="title">
+          [%path/[back/path.html]%]</td>
+       <td width="41"><img src="/_images/back/sky_title_right2.gif" width="41" height="21"></td></tr>
+</table>
+
+
+<br />
+<table cellpadding="0" cellspacing="0" width="100%">
+ <tr valign="top">
+ 
+[%actions/{
+  <td width="83"><img onmouseover="actionMenu();" onmouseout="actionMenu_close();" src="/_images/back/action.gif" width="83" height="24" style="float:left" /></td>
+  <td>
+<div style="position:absolute; display:none; border:1px solid #919599; background-color:#D9DFE9;" id="actionMenu" onmouseover="clearTimeout(timer);" onmouseout="actionMenu_close();">
+}%]
+
+[%actAddSection/{
+<div class="actionMenu" onmouseover="style.color='#06C';" onmouseout="style.color='#374159';" onclick="location.href='?add=[%./id%]&type=s&sction=1';">
+Добавить раздел</div>
+}%]
+
+[%actAddPage/{ 
+<div class="actionMenu" onmouseover="style.color='#06C';" onmouseout="style.color='#374159';" onclick="location.href='?add=[%./id%]&type=s&sction=0';">
+Добавить страницу</div>
+}%]
+
+[%actClearS/{ 
+<div class="actionMenu" onmouseover="style.color='#06C';" onmouseout="style.color='#374159';" 
+onclick="clear_s('Вы уверены, что хотите удалить все подразделы в этом разделе?',[%./id%],5);">
+Удалить все подразделы</div>
+}%]
+
+[%actClearP/{ 
+<div class="actionMenu" onmouseover="style.color='#06C';" onmouseout="style.color='#374159';" 
+onclick="clear_s('Вы уверены, что хотите удалить все страницы в этом разделе?',[%./id%],7);">
+Удалить все страницы</div>
+}%]
+
+[%actPast/{
+<div class="actionMenu" onmouseover="style.color='#06C';" onmouseout="style.color='#374159';" onclick="past();">
+Вставить (объектов: [%./actPast%])</div>
+}%]
+
+[%actPast/{
+<div class="actionMenu" onmouseover="style.color='#06C';" onmouseout="style.color='#374159';" onclick="undoPast();">
+Отменить вставку (объектов: [%./actPast%])</div>
+}%]
+
+[%actions/{
+</div>
+  </td>
+}%]
+
+  <td class="title" nowrap align="right">
+[%name%] &nbsp;
+[%butRedact/{<input type="button" value="" class="rd_bt" title="редактировать" onclick="red([%./id%],'s',1);">}%]
+<!--[%butCut/{<input type="button" value="" class="cu[%D%]_bt" title="вырезать [%D/{(отменить)}%]" onclick="cut([%./id%],'s');">}%]-->
+&nbsp;
+  </td>
+ </tr>
+</table>
+
+
+
+<br /><br />
+[%sections/{
+<div align="center">РАЗДЕЛЫ</div>&nbsp;
+<table width=100% cellspacing=1 class="tbl"><tr><th></th><th width=100%>Наименование</th><th><span title='Выводить в меню'>В меню</span></th><th><span title='Опубликовать'>Опубл.</span></th><th><span title='Сортировка'>Сорт.</span></th><th></th></tr>
+ [%sub/{
+  <tr [%butCut/D/{class="cut"}%]>
+   <td><img src="/_images/back/catalog_ico[%menu/? 0 {_gray}%].gif" title="[%menu/? 0 {Не публикуется в меню.} 1 {Публикуется в меню.}%]" /></td>
+
+   <td><a href="?sct=[%id%]">[%name%]</a></td>
+   <td align="center"><input type="checkbox" onclick="menu([%id%],'s');" [%menu/? 1 {checked}%] /></td>  
+<td align="center">[%butPabl/{<input type="checkbox" onclick="pabl([%./id%],'i');" [%./pabl/? 1 {checked}%] />}%]</td>   
+   <td>
+    <table height=100% align="center"><tr height=100%>
+      [%butUp/{<td valign="center" height="100%" align="right"><input type="button" value="" class="up_but" title="вверх" onclick="up([%./id%],'s');"></td>}%]
+      [%butDown/{<td valign="center" height="100%" align="right"><input type="button" value="" class="down_but" title="вниз" onclick="down([%./id%],'s');"></td>}%]
+    </tr></table>
+   </td>
+   <td nowrap>
+   	  [%butRedact/{<input type="button" value="" class="rd_bt" title="редактировать подраздел" onclick="red([%./id%],'s');">}%]
+   	  [%butDelete/{<input type="button" value="" class="dl_bt" title="удалить подраздел" onclick="del([%./id%],'s');">}%]
+   
+<!--      [%butCut/{<input type="button" value="" class="cu[%D%]_bt" title="вырезать подраздел [%D/{(отменить)}%]" onclick="cut([%./id%],'s');">}%]
+-->   </td>
+  </tr>
+ }%]
+</table>
+}%]
+
+[%pages/{
+&nbsp;<div align="center">СТРАНИЦЫ</div>&nbsp;
+<table width=100% cellspacing=1 class="tbl"><tr><th></th><th width=100%>Наименование</th><th>URI</th><th><span title='Выводить в меню'>В меню</span></th><th><span title='Опубликовать'>Опубл.</span></th><th><span title='Сортировка'>Сорт.</span></th><th></th></tr>
+ [%sub/{
+  <tr [%butCut/D/{class="cut"}%]>
+   <td><img src="/_images/back/catalog_ico_[%fix/? 1 {file} 0 {descr}%][%menu/? 0 {_gray}%].gif" title="[%fix/? 1 {Модуль.} 0 {Статическая страница.}%] [%menu/? 0 {Не публикуется в меню.} 1 {Публикуется в меню.}%]" /></td>
+   <td>[%name%]</td>
+   <td>[%page%]</td>
+   <td align="center"><input type="checkbox" onclick="menu([%id%],'s');" [%menu/? 1 {checked}%] /></td>   
+   <td align="center">[%butPabl/{<input type="checkbox" onclick="pabl([%./id%],'s');" [%./pabl/? 1 {checked}%] />}%]</td>
+   <td>
+    <table height=100% align="center"><tr height=100%>
+      [%butUp/{<td valign="center" height="100%" align="right"><input type="button" value="" class="up_but" title="вверх" onclick="up([%./id%],'s');"></td>}%]
+      [%butDown/{<td valign="center" height="100%" align="right"><input type="button" value="" class="down_but" title="вниз" onclick="down([%./id%],'s');"></td>}%]
+    </tr></table>
+   </td>
+   <td nowrap>
+   	[%butRedact/{<input type="button" value="" class="rd_bt" title="редактировать страницу" onclick="red([%./id%],'s');">}%]
+   	[%butDelete/{<input type="button" value="" class="dl_bt" title="удалить страницу" onclick="del([%./id%],'s');">}%]
+   	[%!butDelete/{<img src="/_images/back/spacer.gif" width="23" height="1" style="margin:0" />}%]
+   	[%butCut/{<input type="button" value="" class="cu[%D%]_bt" title="вырезать страницу [%D/{(отменить)}%]" onclick="cut([%./id%],'s');">}%]
+   </td>
+  </tr>
+ }%]
+</table>
+}%]
+
+</body>
+</html>

@@ -1,0 +1,1161 @@
+.wrap{
+        margin: 0 auto;
+        width: 960px;
+
+}
+.wrap1{
+     margin-left:100px;
+      #  align:center;
+
+
+}
+
+.m-dotted {
+        color:#00aff0;
+        text-decoration: none; /* Убираем подчеркивание */
+        border-bottom: 1px dotted #00aff0;; /* Добавляем свою линию */
+}
+.m-dotted:hover {
+        color: darkred; /* Цвет ссылки при наведении на нее курсора */
+}
+
+
+div.topwrap{
+        #margin-top: 10px;
+        width: 100%;
+        height: 48px;
+        float: left;
+        background: #f3f5ef;
+}
+
+div.head{
+        width: 100%;
+        float: left;
+}
+        a.logo{
+                display: block;
+                float: left;
+                margin-top: 0px;
+                font: 24px Century Gothic;
+                text-decoration: none;
+        }
+        div.date{
+                float: right;
+                font-size: 12px;
+                margin-top: 6px;
+        }
+                div.date span{
+                        font-size: 16px;
+                        color: #5ba012;
+                }
+        div.topMenu{
+                margin-top: 7px;
+                width: 100%;
+                height: 54px;
+                float: left;
+                background: url("/i/topMenuBg.png");
+        }
+        div.groupselect{
+                width: 580px;
+                float: left;
+                margin-top: 12px;
+        }
+                div.groupselect select{
+                        height: 35px;
+                        margin-right: 10px;
+                        font-size: 14px;
+                }
+                        div.groupselect select[name=city]{
+                                width: 180px;
+                        }
+                        div.groupselect select[name=street]{
+                                width: 210px;
+                        }
+                        div.groupselect select[name=number]{
+                                width: 100px;
+                        }
+                div.nameTsj{
+                        float: left;
+                        font-size: 14px;
+                        margin-top: 15px;
+
+                }
+                div.nameAuth{
+                        float: right;
+                        font-size: 16px;
+                        margin-top: 15px;
+                        width:200px;
+                }
+                div.nameAuth  a {
+                color: white; /* ���� ������ */
+                font-size: 14px;
+              }
+                div.namelk{
+                        float: left;
+                        font-size: 14px;
+                        margin-top: 7px;
+                        margin-left: 30px;
+                }
+
+              div.nameTsj a {
+                color: white; /* ���� ������ */
+              }
+        div.content{
+                width: 100%;
+                float: left;
+                background: #f3f5ef;
+                height: 100%;
+                min-height: 100%;
+                padding-bottom: 20px;
+                min-height :600px;
+        }
+        div.content a{
+                color: #00aff0;
+        }
+        div.leftMenu{
+                        margin: 0 auto;
+                        width: 960px;
+                        #float: left;
+                        #margin-top: 30px;
+                        background: #f3f5ef;
+        }
+        div.leftMenu ul li, div.leftMenu ul{
+                display: inline;
+                margin: 0;
+                padding:0;
+                width:150px;
+        }
+
+        div.leftMenu ul li{
+                display: inline;
+                list-style: none;
+                height: 43px;
+                width: 150px;
+        }
+                div.leftMenu ul li:hover, div.leftMenu ul li.active{
+                       # background: url("/i/activeMenu.png");
+                }
+        div.leftMenu ul li a{
+                display: inline;
+                font-size: 13px;
+                text-decoration: none;
+                font-weight: 700;
+        }
+        div.leftMenu ul li a:hover, div.leftMenu ul li a.active{
+                display: inline;
+                color: #00aff0;
+        }
+        div.leftMenu ul li a{
+                display: inline;
+                float: left;
+                height: 21px;
+                padding: 12px 0 10px 45px;
+                color: #333333;
+                #width: 90px;
+                margin-right:50px;
+        }
+                div.leftMenu ul li a.lk{
+                        color: #5ba012;
+                }
+                div.leftMenu ul li a.item1{
+                        background: url("/i/icon1.png") no-repeat 12px 8px;
+                }
+                div.leftMenu ul li a.item1:hover, div.leftMenu ul li a.item1:active{
+                        background: url("/i/icon1a.png") no-repeat 12px 8px;
+                }
+
+                div.leftMenu ul li a.item2{
+                        background: url("/i/icon2.png") no-repeat 8px 8px;
+                }
+                div.leftMenu ul li a.item2:hover, div.leftMenu ul li a.item2:active{
+                        background: url("/i/icon2a.png") no-repeat 8px 8px;
+                }
+
+                div.leftMenu ul li a.item3{
+                        background: url("/i/icon3.png") no-repeat 17px 8px;
+                }
+                div.leftMenu ul li a.item3:hover, div.leftMenu ul li a.item3:active{
+                        background: url("/i/icon3a.png") no-repeat 17px 8px;
+                }
+
+                div.leftMenu ul li a.item4{
+                        background: url("/i/icon4.png") no-repeat 12px 8px;
+                }
+                div.leftMenu ul li a.item4:hover, div.leftMenu ul li a.item4:active{
+                        background: url("/i/icon4a.png") no-repeat 12px 8px;
+                }
+
+                div.leftMenu ul li a.item5{
+                        background: url("/i/icon5.png") no-repeat 6px 8px;
+                }
+                div.leftMenu ul li a.item5:hover, div.leftMenu ul li a.item5:active{
+                        background: url("/i/icon5a.png") no-repeat 5px 8px;
+                }
+
+
+
+
+        div.tsgMenu{
+                        width: 180px;
+                        float: left;
+                        margin-top: 30px;
+                }
+        div.tsgMenu ul li, div.tsgMenu ul{
+                margin: 0;
+                padding:0;
+                width:173px;
+        }
+
+        div.tsgMenu ul li{
+                list-style: none;
+                height: 30px;
+                #width: 213px;
+                width: 180px;
+                margin-top:10px;
+        }
+                div.tsgMenu ul li:hover, div.tsgMenu ul li.active{
+                       # background: url("/i/activeMenu.png");
+                       background:  #00aff0;
+                }
+
+                div.tsgMenu ul li.lk{
+                    background:  #00aff0;
+                }
+
+        div.tsgMenu ul li a{
+                font-size: 13px;
+                text-decoration: none;
+                font-weight: 500;
+        }
+        div.tsgMenu ul li a:hover, div.tsgMenu ul li a.active{
+                color: white;
+        }
+        div.tsgMenu ul li a{
+                display: block;
+                float: left;
+                height: 21px;
+                padding: 5px 0 0px 10px;
+                #padding: 5px 0 10px 45px;
+                color: #333333;
+        }
+        div.tsgMenu ul li.lk a{
+                color: white;
+        }
+
+input[type="text"] {
+        border: 1px solid #cccccc; //цвет рамки
+border-radius: 3px; //закругление углов (общее)
+-webkit-border-radius: 3px; //закругление углов (Google Chrome)
+-moz-border-radius: 3px; //закругление углов (FireFox)
+-khtml-border-radius: 3px; //закругление углов (Safari)
+background: #ffffff !important; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
+outline: none; // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
+height: 24px; // высота на свое усмотрение
+width: 120px; // ширина на свое усмотрение
+color: #cccccc; //цвет шрифта в обычном состоянии
+font-size: 11px; // Размер шрифта
+font-family: Tahoma; // Стиль шрифта
+}
+         input[type="text"]:focus {
+                color: #000000;
+               # border: 1px solid #000000
+        }
+
+        div.centerBlock{
+
+                float: left;
+                margin: 10px 0 0 0px;
+                font-size: 14px;
+                background: #ffffff;
+
+                        box-shadow: 2px 2px 1px rgba(207,208,203,1);
+                        border-radius: 5px;
+                        padding: 20px 20px 15px 20px;
+                        position: relative;
+                        overflow: visible;
+
+        }
+                  div.centerBlock p{
+                      font-size: 14px;
+                  }
+       div.mainBlock{
+                       width: 80%;
+                        float: left;
+                        margin: 10px 0 0 25px;
+        }
+                 div.mainBlock p.date{
+                        font-size: 24px;
+                        #margin: 5px 0;
+                        #float: left;
+                        #display: block;
+                }
+        div.innercenterBlock{
+                width: 470px;
+                float: left;
+                margin: 10px 0 0 25px;
+        }
+                 div.innercenterBlock p.date{
+                        font-size: 16px;
+                        #margin: 5px 0;
+                        #float: left;
+                        #display: block;
+                }
+
+                div.centerBlock p.date{
+                        font-size: 24px;
+                        margin: 10px 0;
+                        float: left;
+                }
+
+                div.newsBlock{
+                        background: #ffffff;
+                        width: 647px;
+                        float: left;
+                        margin: 20px 0 20px 0;
+                        box-shadow: 2px 2px 1px rgba(207,208,203,1);
+                        border-radius: 5px;
+                        padding: 20px 20px 15px 20px;
+                        position: relative;
+                        overflow: visible;
+                        font-size: 14px;
+                }
+                        div.newsBlock p{
+                               font-size: 14px;
+                        }
+
+                        span.company_name a{
+                               font-size: 16px;
+                               font-weight:bold;
+                               color:#00AFF0;
+                        }
+
+                        span.company_name {
+                               font-size: 14px;
+                               font-weight:bold;
+                               color:#00AFF0;
+                        }
+
+                div.innercenterBlock h3
+
+                {
+                        font-size: 16px;
+                        #margin: 5px 0;
+                        #float: left;
+                        #display: block;
+                }
+                div.mainBlock h3{
+                        font-size: 16px;
+                        #margin: 5px 0;
+                        #float: left;
+                        #display: block;
+                }
+                        div.hvost{
+                                background: url("/i/hvost.png");
+                                width: 22px;
+                                height: 11px;
+                                position: absolute;
+                                bottom: -11px;
+                                left: 40px;
+                        }
+                        div.centerBlock div.bodyNews p{
+                                width: auto;
+                                float: none;
+                                font-size: 14px;
+                        }
+                        div.bodyNews u{
+                                width: auto;
+                                float: none;
+                                font-size: 14px;
+                        }
+                        div.bodyNews img.img{
+                                float: left;
+                                margin: 0 20px 0 0px;
+                        }
+                        div.bodyNews p a{
+                                color: #0083b2;
+                                font-size: 14px;
+                        }
+                        div.bodyNews p {
+
+                                font-size: 14px;
+                        }
+                        p.linkNews{
+                                margin: 10px 0 0 0px;
+                        }
+                                 a.linkeditBg{
+                                        width: 115px;
+                                        height: 18px;
+                                        background: url("/i/edit.png");
+
+                                        float: left;
+
+                                }
+                                        a.linkeditBg:hover{
+                                                background: url("/i/editactive.png") no-repeat center;
+                                        }
+                                        a.linkeditBg:active{
+                                                background: url("/i/editclick.png") no-repeat center;
+                                        }
+                                 a.linkdelBg{
+                                        width: 76px;
+                                        height: 18px;
+                                        background: url("/i/del.png");
+
+                                        float: left;
+
+                                }
+                                        a.linkdelBg:hover{
+                                                background: url("/i/delactive.png") no-repeat center;
+                                        }
+                                        a.linkdelBg:active{
+                                                background: url("/i/delclick.png") no-repeat center;
+                                        }
+                                 a.linkbidsBg{
+                                        width: 73px;
+                                        height: 18px;
+                                        background: url("/i/bid.png");
+                                        display: block;
+                                        float: left;
+
+                                }
+                                        a.linkbidsBg:hover{
+                                                background: url("/i/bidactive.png") no-repeat center;
+                                        }
+                                        a.linkbidsBg:active{
+                                                background: url("/i/bidclick.png") no-repeat center;
+                                        }
+                                a.linkvendorBg{
+                                        width: 101px;
+                                        height: 18px;
+                                        background: url("/i/supply.png");
+                                        display: block;
+                                        float: left;
+
+                                }
+                                        a.linkvendorBg:hover{
+                                                background: url("/i/supplyactive.png") no-repeat center;
+                                        }
+                                        a.linkvendorBg:active{
+                                                background: url("/i/supplyclick.png") no-repeat center;
+                                        }
+                                a.linkofferBg{
+                                        width: 169px;
+                                        height: 18px;
+                                        background: url("/i/bidprice.png");
+                                        display: block;
+                                        float: left;
+
+                                }
+                                        a.linkofferBg:hover{
+                                                background: url("/i/bidpriceactive.png") no-repeat center;
+                                        }
+                                        a.linkofferBg:active{
+                                                background: url("/i/bidpriceclick.png") no-repeat center;
+                                        }
+                                a.linknewsBg{
+                                        width: 76px;
+                                        height: 18px;
+                                        background: url("/i/news.png");
+                                        display: block;
+                                        float: left;
+
+                                }
+                                        a.linknewsBg:hover{
+                                                background: url("/i/newsActive.png") no-repeat center;
+                                        }
+                                        a.linknewsBg:active{
+                                                background: url("/i/newsClicl.png") no-repeat center;
+                                        }
+                                a.linklawBg{
+                                        width: 142px;
+                                        height: 18px;
+                                        background: url("/i/zakon.png");
+                                        display: block;
+                                        float: left;
+
+                                }
+                                        a.linklawBg:hover{
+                                                background: url("/i/zakonActive.png") no-repeat center;
+                                        }
+                                        a.linklawBg:active{
+                                                background: url("/i/zakonClicl.png") no-repeat center;
+                                        }
+                                a.daleeBg{
+                                        width: 84px;
+                                        height: 18px;
+                                        background: url("/i/dalee.png");
+                                        display: block;
+                                        float: left;
+                                }
+                                        a.daleeBg:hover{
+                                                background: url("/i/daleeActive.png") no-repeat center;
+                                        }
+                                        a.daleeBg:active{
+                                                background: url("/i/daleeClick.png") no-repeat center;
+                                        }
+                                a.rezBg{
+                                        width: 139px;
+                                        height: 18px;
+                                        background: url("/i/rez.png");
+                                        display: block;
+                                        float: left;
+                                        margin-left:20px;
+                                }
+                                        a.rezBg:hover{
+                                                background: url("/i/rezActive.png") no-repeat center;
+                                        }
+                                        a.rezBg:active{
+                                                background: url("/i/rezClick.png") no-repeat center;
+                                        }
+                                a.voteBg{
+                                        width: 99px;
+                                        height: 18px;
+                                        background: url("/i/vote.png");
+                                        display: block;
+                                        float: left;
+                                }
+                                        a.voteBg:hover{
+                                                background: url("/i/voteActive.png") no-repeat center;
+                                        }
+                                        a.voteBg:active{
+                                                background: url("/i/voteClickl.png") no-repeat center;
+                                        }
+                                span.typevisible{
+                                        float: right;
+                                        margin: 0px 20px 0 0;
+
+                                }
+                                span.oprosl{
+                                        float: left;
+                                        margin: 0px 20px 0 0;
+
+                                }
+                                span.visible{
+                                        background: url("/i/prosmotry.png") no-repeat center;
+                                        height: 18px;
+                                        position: relative;
+                                        margin: 0 0 0 5px;
+                                        font-size: 11px;
+                                        width: 109px;
+                                        padding: 0 10px;
+                                }
+                                span.typecenter{
+                                        #margin: 0px 20px 0 0;
+                                        align:center;
+
+                                }
+
+        p.ischo{
+                margin: 20px 0;
+                float: left;
+                text-align: center;
+                width: 100%;
+        }
+
+        div.rightBlock{
+                width: 230px;
+                float: left;
+                margin: 40px 0 0 35px;
+        }
+
+        div.footer{
+                width: 100%;
+                float: left;
+                background: #e8ebe0;
+                height: 90px;
+                padding: 35px 0 0 0;
+        }
+        p.bottomMenu{
+                float: left;
+        }
+                p.bottomMenu a{
+                        margin: 0 10px;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                }
+        p.razr{
+                float: right;
+        }
+                p.razr a{
+                        color: #00aff0;
+                }
+
+        div.lineLk{
+                width: 100%;
+                margin: 20px 0;
+                border-top: 1px solid #e8ebe0;
+                border-bottom: 1px solid #ffffff;
+        }
+
+        div.consult p{
+                font-size: 14px;
+        }
+        p.theme{
+                margin: 0px 0 10px 0;
+        }
+        p.linkOtvet{
+                float: left;
+                width: 105%;
+                margin: 10px 0;
+        }
+        div.consult p.vopos{
+
+                font-size: 13px;
+        }
+                span.toggleotvet{
+                        display: block;
+                        float: left;
+                        background: url("/i/otvery.png");
+                        width: 150px;
+                        height: 18px;
+                        text-align: center;
+                        font-size: 11px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                }
+                        span.toggleotvet:hover{
+                                background: url("/i/otveryHover.png");
+                        }
+                        span.toggleotvet:active{
+                                background: url("/i/otveryactive.png");
+                        }
+                span.otvetvis{
+                        float: right;
+                        top: 0;
+                        text-align: center;
+                }
+        div.otvety{
+                margin: -2px 0 20px 0;
+        }
+        div.allMessage{
+                width: 730px;
+        }
+        div.centerBlock p{
+                width: 100%;
+                float: left;
+        }
+
+        div.centerBlock input[type=text], div.newsBlock input[type=text], div.centerBlock input[type=password], div.centerBlock input[type=file], div.centerBlock textarea,  p.input textarea{
+                border: 2px solid #d8dbd0;
+                border-radius: 5px;
+                padding: 5px 5px;
+                margin: 3px 0 0 0;
+                background: #ffffff;
+        }
+        p.input{
+                font-size: 14px;
+        }
+        input.w320, textarea.w320, select.w320{
+                width: 350px;
+        }
+       input.w160{
+                width: 160px;
+        }
+                span.width50{
+                        width: 190px;
+                        float: left;
+                         font-size: 14px;
+                }
+
+        div.message{
+                        background: #ffffff;
+                        width: 100%;
+                        float: left;
+                        margin: 10px 0 10px 0;
+                        box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+                        border-radius: 5px;
+                        padding: 20px 20px 15px 20px;
+        }
+        div.noread{
+                background: #f4f3df;
+        }
+                img.avatar{
+                        float: left;
+                        margin: 0 25px 0 0;
+                }
+                div.nameDate{
+                        width: 130px;
+                        float: left;
+                        margin: 0 25px 0 0;
+                }
+                        div.nameDate p.name{
+                                font-size: 14px;
+                                color: #00aff0;
+                        }
+                        div.nameDate p.date{
+                                font-size: 12px;
+                        }
+                div.isMessage{
+                        width: 420px;
+                        float: left;
+                        margin: 0 0px 0 0;
+                        cursor: pointer;
+                }
+                span.noReadCount, span.noReadCountMenu{
+                        font-size: 11px;
+                        position: relative;
+                        top: -10px;
+                        left: 5px;
+                        color: #00aff0;
+                }
+                span.noReadCountMenu{
+                        top: -1px;
+                        left: 2px;
+                }
+                div.oneMessage{
+                        width: 100%;
+                        float: left;
+                        margin: 10px 0;
+                }
+                td.procent{
+                        font-weight: 900;
+                        margin: 10px;
+                }
+
+                div.zalivka{
+                                height: 1000px;
+                                width: 100%;
+                                position: absolute;
+                                background: url("/i/zalivka.png") repeat;
+                                z-index: 9999;
+                        }
+                        div.popupWindow{
+                                width:270px;
+                                height: 150px;
+                                position: fixed;
+                                top: 20%;
+                                left: 35%;
+                                background: #e8ebe0;;
+                                z-index: 99999;
+                                padding: 20px;
+                                border: 4px solid #ffffff;
+                                border-radius: 10px;
+                        }
+                        div.popupWindow  table{
+                                margin: 0px 0 0 0;
+                        }
+                        div.popupWindow input[type='text']{
+                                background: #ffffff;
+                                border:0;
+                                padding: 5px;
+                                width: 180px;
+                                border-radius: 5px;
+                                margin: 2px 0;
+                        }
+                        div.popupWindow  table a{
+                                color: #00aff0;
+                        }
+                        #closePopup{
+                                position: absolute;
+                                top: 3px;
+                                right: 3px;
+                                cursor: pointer;
+                                color: #00aff0;
+                                font-size: 14px;
+                        }
+                        div.dispNone{
+                                display: none;
+                        }
+
+                         a.noactiveButtom{
+                                display: block;
+                                background: url("/i/bottonNoActive_.png");
+                                width: 147px;
+                                height: 16px;
+                                text-align: center;
+                                padding: 10px 0;
+                                color: #000000;
+                                text-transform: uppercase;
+                                font: 11px Century Gothic;
+                                text-decoration: none;
+                                margin-left: 30px;
+
+                        }
+
+                        a.blueButtom,  a.greenButtom{
+                                display: block;
+                                background: url("/i/bottonNoActive.png");
+                                width: 147px;
+                                height: 16px;
+                                text-align: center;
+                                padding: 10px 0;
+                                color: #000000;
+                                text-transform: uppercase;
+                                font: 11px Century Gothic;
+                                text-decoration: none;
+                                margin-left: 30px;
+
+                        }
+                        a.blueButtom:hover,  a.greenButtom:hover{
+                                background: url("/i/bottonActive.png");
+                        }
+
+                        div.content a.greenButtom{
+                                background: url("/i/GreenbottonNoActive.png");
+                        }
+
+                        div.content a.greenButtom:hover{
+                                        background: url("/i/GreenbottonActive.png");
+                        }
+
+
+.overlay{
+        position : absolute;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        background : #000;
+        filter:progid:DXImageTransform.Microsoft.Alpha(opacity=37);
+        -moz-opacity: 0.37;
+        -khtml-opacity: 0.37;
+        opacity: 0.37;
+        z-index : 1000;
+        cursor : pointer;
+        display : none;
+}
+
+.popup-block{
+        position : absolute;
+        #right : 5px;
+        #top : 10px;
+        left : 45%;
+        top  : 30%;
+        margin:-131px auto auto -131px;
+        #width : 262px;
+       # background : url(/i/login-bottom.png) bottom left no-repeat;
+        padding-bottom : 14px;
+        z-index : 1500;
+        display : none;
+}
+
+
+.popup-block .top{
+        height : 13px;
+        #background : url(/i/login-top.png) bottom left no-repeat;
+}
+
+.popup-block .lcont{
+        #background : url(/i/login-middle.png) bottom left repeat-y;
+        padding : 2px 17px;
+}
+
+.popup-block .lcont a{
+        position : relative;
+}
+.popup-block .lcont .close{
+        float : right;
+        width : 11px;
+        height : 11px;
+        top : 30px;
+        #margin-right:20px;
+        right:20px;
+        #padding-top:20px;
+        background : url(/i/login-close.gif);
+        overflow : hidden;
+        z-index : 4000;
+}
+
+.popup-block .lcont h3{
+        margin-top : 4px;
+        font-family : Arial;
+        font-size : 17px;
+        font-weight : bold;
+        font-style : italic;
+        text-transform : none;
+        margin-bottom : 20px;
+}
+
+.popup-block .lcont label{
+        font-family : Arial;
+        font-size : 13px;
+}
+
+.popup-block .lcont label.input{
+        width : 60px;
+        display : inline-block;
+        vertical-align : middle;
+        line-height : 26px;
+}
+
+.popup-block .lcont input.text{
+        width : 158px;
+        line-height : 26px;
+        /*background : url(/i/login-input.gif);*/
+        vertical-align : middle;
+}
+
+.popup-block .lcont .right{
+        margin-left : 64px;
+}
+
+.popup-block .lcont .img{
+        margin-bottom : 20px;
+        margin-top : 5px;
+}
+
+.popup-block .lcont .change{
+        font-size : 14px;
+
+        #border-bottom : 1px dashed #99cc33;
+}
+
+.popup-block .lcont .change:hover{
+        border-bottom : none;
+}
+
+.popup-block .lcont .lregister, .popup-block .lcont .lforgot{
+        display : none;
+}
+
+.popup-block .lcont .lregister input.img{
+        width : 3000px;
+}
+
+        div.lcont input[type=text], div.lcont input[type=password]{
+                border: 2px solid #d8dbd0;
+                border-radius: 5px;
+                padding: 5px 5px;
+                margin: 3px 0 0 0;
+                background: #ffffff;
+        }
+
+
+        div.lcont input.w100{
+                width: 140px;
+        }
+
+        .vhod{
+                align:center;
+                margin: 15px 0px 0px 15px;
+        }
+
+.rd_bt {
+        background-image: url(/_images/back/button_edit.gif);
+        border: 1px solid #5275A5;
+        width: 23px;
+        height: 22px;
+        cursor: pointer;
+        background-color: White;
+}
+
+.dl_bt{
+        background-image: url(/_images/back/button_delete.gif);
+        border: 1px solid #5275A5;
+        width: 23px;
+        height: 22px;
+        cursor: pointer;
+        background-color: White;
+}
+
+div.but {
+         float:left;
+         margin-bottom : 20px;
+         margin-top : 10px;
+         margin-left : 20px;
+        }
+div.but a{
+        color:black;
+        font-size: 14;
+}
+
+span.message {
+        font-size : 16px;
+        color : red;
+        line-height : 22px;
+
+        }
+
+.photo_img {
+        margin-bottom : 20px;
+        margin-top : 5px;
+        margin-right : 20px;
+
+        }
+
+span.opros_left {
+        width:4px;
+        height:18px;
+        background-image: url(/i/otv_left.png);
+        float:left;
+        }
+span.opros_right {
+        width:4px;
+        float:left;
+        background-image: url(/i/otv_right.png);
+        height:18px;
+        }
+span.opros {
+        height:18px;
+        background-image: url(/i/otv_center.png);
+        float:left;
+        }
+
+div.report{
+                margin:20px 0 0 20px;
+                width: 100%;
+                #height: 54px;
+                float: left;
+                display:block;
+                font-size: 14px;
+        }
+        div.report span{
+          font-size: 14px;
+        }
+div.drep{
+       # margin-top:30px;
+}
+
+div.red_message {
+       color: red;
+
+}
+
+.tbl{
+        #background-color: #5275A5;
+}
+
+.tbl td {
+       # background-color: White;
+        font-size: 12;
+        padding: 2px 5px 2px 5px;
+}
+.tbl th {
+        background-color: #00B6F0;
+        color: white;
+        font-size: 13px;
+        padding-left: 3px;
+        padding-right: 3px;
+}
+
+
+.tbl tr:nth-child(2n+1) {
+  background-color: #F3F6EF;
+}
+
+.mlink  {
+ color: #5BA012;
+}
+
+.zakupki_links a{
+   font-size: 16px;
+   font-weight: bold;
+   margin-right:10px;
+   margin-left:10px;
+}
+
+.zakupki_links {
+   font-size: 16px;
+   font-weight: bold;
+   margin-right:10px;
+   margin-left:10px;
+   margin-top:20px;
+}
+
+.zakupki_offers {
+   font-size: 14px;
+   font-weight: bold;
+   align:center;
+}
+
+        div.zaklineLk{
+                width: 100%;
+                margin: 10px 0;
+                border-top: 1px solid #e8ebe0;
+                border-bottom: 1px solid #ffffff;
+        }
+
+
+div.pager,
+.labelPager { float: left; }
+.labelPager a { color: #333; }
+.pager div,
+.labelPager {
+        line-height: 23px;
+        height: 23px;
+        margin-right: 5px;
+        text-align: center;
+}
+.pager div { float: left; }
+.pager div a { color: #333; }
+.pager div.prev,
+.pager div.next {
+
+        width: 131px;
+        margin: 0 5px 0 5px;
+}
+.pager div.p {
+        width: 24px;
+}
+.pager div.s {
+        width: 24px;
+        background:  #00BEF3 no-repeat;
+        color: #fff;
+        font-weight: 600;
+}
+.pager div.p a {
+        font-weight: 600;
+        color: #999;
+}
+
+.pager div.prev a {
+        padding-left: 15px;
+        margin-left: -10px;
+
+}
+.pager div.next a {
+        padding-right: 15px;
+}
+
+.pager div.pg { margin-right: 10px;}
+.pager td { padding: 40px 0 40px 0; }
+.pager span {
+        width: 131px;
+        display: block;
+}
+.pager td.next { padding-right: 80px; }
+
+div.offerBlock{
+                        background: #ffffff;
+                        width: 647px;
+                        float: left;
+                        #margin: 20px 0 20px 0;
+                        box-shadow: 2px 2px 1px rgba(207,208,203,1);
+                        border-radius: 5px;
+                        padding: 20px 20px 15px 20px;
+                        position: relative;
+                        overflow: visible;
+                        font-size: 14px;
+                }
+
+
+div.zak_name a{
+     font-weight: 600;
+     color: #00AFF0;
+     font-size: 16px;
+     text-decoration:none;
+}
+
+div.zak_name {
+     font-weight: 600;
+     color: #00AFF0;
+     font-size: 16px;
+     text-decoration:none;
+}
+a.sa {
+       text-color: #ffffff;
+       font-size: 13px;
+ }
+div.offerBlock p{
+    font-size: 14px;
+}
+
+span.search_button{
+        width: 100px;
+        background:  #00BEF3 no-repeat;
+        padding: 5px 20px 6px 20px;
+        margin-left:20px;
+        color: #fff;
+        font-weight: 600;
+        text-decoration:none;
+}

@@ -1,0 +1,61 @@
+<!-- manage -->
+<script>
+   function form_submit(name)
+   {
+      var f = document.forms[name];
+      f.submit();
+      return false;
+   }
+
+   function check(name)
+   {
+      var f = document.forms[name];
+      //alert(name);
+      if (val(f,new Array([%fieldsWithoutFail%])) ==true )
+         form_submit(name);
+
+   }
+</script>
+
+    <div class='centerBlock' style="width:640px;">
+
+
+         <p class='date'>Обратная связь</p><br/>
+          [%content%] <br>
+          [%message/?
+
+            er  {
+             <br>
+             <span class="message">
+              Ошибка: не удалось отправить сообщение.
+               <br />Приносим извинения за временные технические неполадки.</span>
+               <br>
+            }
+
+            ok  {
+             <br>
+             <span class="message">
+               Ваше сообщение было успешно отправлено.
+              </span>
+              <br>
+            }
+
+
+         }%]
+         [%kod/{<br> <span class="message"> [%./kod%]</span>}%]
+     <form name='regesty' method="post" action="">
+
+            <p class='input'>*ФИО <br /> <input name = "fio" class='w320' type='text' placeholder='Введите ФИО'/> </p>
+            <p class='input'>*e-mail <br /> <input name = "email" class='w320' type='text' placeholder='Введите Ваш e-mail'/> </p>
+            <p class='input'>*Тема обращения<br /> <input name = "tema" class='w320' type='text' placeholder='Введите тему'/> </p>
+            <p class='input'><br/>
+            <textarea name="text" class="w320"  rows="10" cols="" placeholder='Текст обращения*'></textarea>
+            </p>
+            <p class='input'>*Код подтверждения</br><input class="input" type="text" name="norobot" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="/ajax/capcha.php"  /></p>
+            <input type="hidden" name="send" value="1">
+            <p align='center' class='ischo'><a href='#' class='greenButtom' onclick="check('regesty');">Отправить</a></p>
+      </form>
+    </div>
+
+<!-- /manage-->
+

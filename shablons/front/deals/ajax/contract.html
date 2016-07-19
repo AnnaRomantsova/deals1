@@ -1,0 +1,334 @@
+<!-- NEWS -->
+
+<script type="text/javascript"  src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">  
+<script type="text/javascript"  src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+
+
+<script>
+ $(document).ready(function() {
+     $('#example').dataTable({
+        "oLanguage": {
+            "sLengthMenu": "Показать _MENU_ записей на странице",
+            "sZeroRecords": "Извините - ничего не найдено",
+            "sInfo": "Показано _START_ до _END_ из _TOTAL_ записей",
+            "sInfoEmpty": "Нет записей",
+            "sInfoFiltered": "(из _MAX_ записей)",
+            "sSearch": "Поиск:",
+            "oPaginate": {
+                "sNext": "След. стр.",
+                "sPrevious": "Пред. стр."
+            }
+        }
+    });
+     $('#example1').DataTable();
+} );   
+    
+  function news_submit()  {
+  var el = document.getElementById('from');
+       //alert(el.value);
+       el.value = parseInt(el.value) +1;
+      // alert(el.value);
+       $('#form_news').submit();
+
+  }
+
+   function show_form(name)  {
+       var div = document.getElementById(name);
+       div.style.display = 'block';
+   }
+
+   function hide_form(name)  {
+       var div = document.getElementById(name);
+       div.style.display = 'none';
+   }
+
+   function form_submit(id,val_name,formname)  {
+         var elementi = document.getElementsByName(val_name);
+         var length = elementi.length;
+         for (var i = 0; i < length; i++) {
+             elementi[i].value= id;
+         }
+
+         var f = document.forms[formname];
+         //alert(el.value);
+         f.submit();
+   }
+ function confirmDelete() {
+      return confirm("Вы подтверждаете удаление?");
+   }
+   function form_delete(id,val_name,formname) {
+     if (confirmDelete()) form_submit(id,val_name,formname);
+
+   }
+ $(document).ready(function(){
+    var options = {
+       target: '#allnews',
+       beforeSubmit: showRequest, // функция, вызываемая перед передачей
+       success: showResponse, // функция, вызываемая при получении ответа
+       timeout: 3000 // тайм-аут
+    };
+
+    $('#form_news').submit(function() {
+       $(this).ajaxSubmit(options);
+       return false;
+    });
+    
+    
+ });
+
+     // вызов перед передачей данных
+    function showRequest(formData, jqForm, options) {
+       var queryString = $.param(formData);
+       //alert($('#from').value);
+       //alert('Вот что мы передаем: \n\n' + queryString);
+    }
+
+    // вызов после получения ответа
+    function showResponse(responseText, statusText)  {
+      // hide_form('new_group');
+      if (responseText.indexOf('theend')>=0) {
+    //        alert("3");
+            document.getElementById('escho').style.visible ='none' ;
+            document.getElementById('escho').style.visibility='hidden' ;
+      };
+      //alert('Статус ответа сервера: ' + statusText + '\n\nТекст ответа сервера: \n' + responseText +  '\n\nЦелевой элемент div обновиться этим текстом.');
+    }
+</script>
+
+
+
+
+
+ 
+[%mode/?
+       mode_edit {
+       <div class='centerBlock' style="width: 670px; ">
+        <p class='date'>[%./pagename%]</p><br/>
+         <div class="but"><a href="#" onclick="form_submit('1','new','form_new');">+Добавить [%./object_name%]</a> </div>
+
+               <form method="POST" name="form_new" id="new" action="">
+                  <input type="hidden" name="new" value="1">
+              </form>
+
+              <form method="POST" name="form_del" id="del" action="">
+                 <input type="hidden" id="id" name="id" >
+                 <input type="hidden" name="del" value="1">
+              </form>
+
+              <form method="POST" name="form_edit" id="edit" action="">
+                 <input type="hidden" id="id" name="id" >
+                 <input type="hidden" name="edit" value="1">
+              </form>
+
+                <div id="drep" class="drep">
+                   <table width="100%" cellspacing=0 class="display  cell-border  compact  hover  order-column  row-border  stripe " id="example">
+                       <thead><tr><th>Дата добавления</th>
+                            
+                              <th >Номер извещения</th>
+                              <th>Способ закупки</th>
+                              <th>Срок окончания подачи заявок</th>
+                              <th>Заказчик</th>
+                              <th>ИНН заказчика</th>
+                              <th>Цена лота</th></th>
+                              <th>Цена заявки</th>
+                              <th>Статус</th></th>
+                              <th>Комментарий</th></th>
+                              <th>Ред.</th><th>Удал.</th></tr></thead>
+                       <tbody>
+                [%./sub/{
+                    <tr >                      
+                      <td  >
+                         [%date_create%]
+                      </td>
+                     
+                      <td  >
+                         <a href="/deal/i/[%id%]">[%number%]</a>
+                      </td>
+                      <td >
+                        [%sposob%]
+                      </td>
+                      <td>
+                         [%srok_end_podach%]
+                      </td>
+                       <td>
+                         [%customer%]
+                      </td>
+                       <td  >
+                         [%inn_customer%]
+                      </td>
+                       <td  >
+                         [%price_lot%]
+                      </td>
+                       <td  >
+                         [%price_zaiav%]
+                      </td>
+                       <td  >
+                         [%status%]
+                      </td>
+                       <td  >
+                         [%comment%]
+                      </td>
+                   
+                      <td align="center" id="func[%id%]" >
+                         <input type="button" class="rd_bt" title="редактировать" onclick="form_submit('[%id%]','id','edit')">
+                      </td>
+                      <td align="center" id="func[%id%]" >
+                         <input type="button" class="dl_bt" title="удалить" onclick="form_delete('[%id%]','id','del')">
+                      </td>
+                    </tr>
+                }%]
+                </tbody>
+                </table>
+               </div>
+         </div>
+        }
+        mode_edit_one {
+               <script>
+                 function form_submit(name)
+                 {
+                    var f = document.forms[name];
+                    f.submit();
+                    return false;
+                 }
+
+                 function check(name)
+                 {
+                    var f = document.forms[name];
+                    //alert(name);
+                    if (val(f,new Array([%fieldsWithoutFail%])) ==true )
+                       form_submit(name);
+
+                 }
+              </script>
+
+              <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+             
+              <div class='newsBlock'>
+                <div class='bodyNews'>
+                <p class="date">Редактирование</p> <br/>
+                <form  action="" name="fsave" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="save_submit" value="1">
+                  [%./sub/{<input type="hidden" name="id" value="[%id%]">}%]
+                  <input type="hidden" name="pabl" value="0">
+                     [%./tab_fields/{ 
+                     <p>[%rname%]:</p>
+                        [%type/?
+                          varchar  {  <input type="text" name="[%./fname%]" id="[%./fname%]" maxlength="[%./length%]" value="[%./value%]">}
+                          int  {  <input type="text" name="[%./fname%]" id="[%./fname%]" maxlength="[%./length%]" value="[%./value%]">}
+                          text  {<textarea name="[%./fname%]" id="manage" cols="45" rows="10">[%./value%]</textarea>}
+                          list  {<select name='[%./fname%]'>
+			                           [%./list_table/{ <option value="[%id%]" [%selected%]>[%name%]</option>}%]			                           
+			                      </select>
+			                      }
+                        %] 
+                      }%]
+                     <div class="vhod">
+                            <div class="but">  <a href='#' class='greenButtom' onclick="form_submit('fsave')">Сохранить</a></div>
+                            <div class="but"><a href='/[%PAR/page%]' class='greenButtom' >Отмена</a> </div>
+                     </div>
+                </form>
+                </div>
+              </div>
+             
+         }
+         mode_new {
+
+                       <script>
+                 function form_submit(name)
+                 {
+                    var f = document.forms[name];
+                    f.submit();
+                    return false;
+                 }
+
+                 function check(name)
+                 {
+                    var f = document.forms[name];
+                    //alert(name);
+                    if (val(f,new Array([%fieldsWithoutFail%])) ==true )
+                       form_submit(name);
+
+                 }
+              </script>
+
+              <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+              <div class='newsBlock'>
+                <div class='bodyNews'>
+                <p class="date">Добавление </p> <br/>
+                <form  action="" name="fsave" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="new_submit" value="1">
+                     [%./tab_fields/{ 
+                     <p>[%rname%]:</p>
+                        [%type/?
+                          varchar  {  <input type="text" name="[%./fname%]" id="[%./fname%]" maxlength="[%./length%]" value="">}
+                          text  {<textarea name="[%./fname%]" id="manage" cols="45" rows="10"></textarea>}
+                          list  {<select name='[%./fname%]'>
+			                           [%./list_table/{ <option value="[%id%]">[%name%]</option>}%]			                           
+			                      </select>
+			                      }
+                        %] 
+                      }%]
+                     <div class="vhod">
+                            <div class="but">  <a href='#' class='greenButtom' onclick="form_submit('fsave')">Сохранить</a></div>
+                            <div class="but"><a href='/[%PAR/page%]' class='greenButtom' >Отмена</a> </div>
+                     </div>
+                </form>
+                </div>
+              </div>
+         }
+         mode_show {
+            <div id="allnews">
+            [%./sub/{
+               <p class='date'>[%datetime%] </p>
+                 [%sub1/{
+                  <div class='newsBlock' style="width: 447px; ">
+                            <div class='hvost'></div>
+                            <div class='bodyNews'>
+
+                                    [%image1/{<img class='img'  src="[%src%]" width="80" height="80" alt="[%./alt1%]" />}%]
+                                    <p><a href="/[%ntype%]/i/[%id%]">[%name%]</a></p><br>
+                                    <p>[%preview%] </p>
+                            </div>
+                            <p class='linkNews'><br>
+                                    <a href="/[%ntype%]/i/[%id%]" class='daleeBg'></a>
+                                    <span class='typevisible'>
+                                            <a href="/[%ntype%]" class='linknewsBg'></a>
+                                            <span class='visible'>Просмотров: [%watch%]&nbsp;&nbsp;</span>
+                                    </span>
+                            </p>
+                  </div>
+                }%]
+            }%]
+
+            [%./no_sub/{
+             <div class='centerBlock'>
+                <p class='date'>[%./pagename%]</p><br/>
+                На данный момент нет ни одного [%./object_name%]
+             </div>
+             }%]
+              <div id="new_news"></div>
+             </div>
+               <form method="POST" id="form_news" name="form_news" action="/ajax/tsjnews.php" >
+                  <input type="hidden" id="from" name="from" value="1">
+               </form>
+             [%./escho/{ <p align='center' class='ischo'><a href="#" class='greenButtom' style="margin-left: 260px;"  id="escho" onclick="news_submit();"/>Показать ещё</a></p>}%]
+         }
+         mode_show_one {
+              <div class='newsBlock'>
+                  <div class='bodyNews'>
+                      <p><a href='#'>[%./name%]</a></p> <br/>
+                      <p>[%./about%]</p>
+                  </div>
+                  <p class='linkNews'>
+
+                         <a href="/tsjnews" class='linknewsBg'></a>
+
+                  </p>
+              </div>
+         }
+   %]
+
+
+<!-- /NEWS -->
+

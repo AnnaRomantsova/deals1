@@ -1,0 +1,8 @@
+
+#php_flag session.use_trans_sid off
+
+
+php_flag register_globals 1
+RewriteEngine on
+RewriteBase /
+RewriteRule !((\.(js|ico|gif|jpg|png|css)$)|(^(admin|ajax|site_builder|i_edit.html|jtable|_files|__doc|font|int.php|test.html)(.*))) index.php

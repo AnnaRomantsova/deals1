@@ -1,0 +1,37 @@
+<div class='centerBlock'>
+   [%message/{
+           <span class="message">
+              [%./message%]
+           </span>
+           <br><br>
+    }%]
+
+   <script>
+       function form_submit1(name)
+       {
+          var f = document.forms[name];
+         // alert(f);
+          f.submit();
+          return false;
+       }
+
+    </script>
+   <form action="/auth" id='auth' name='auth' method="post">
+     <input type="hidden" name="log_in"/>
+     <table class=form-onpage>
+         <tr>
+           <td class=aleft>
+             <input type="text" class='w160' name="email" value="[%email%]" placeholder='Введите E-mail'/>
+             <br>
+             <input class='w160' placeholder='Пароль' type="password" name="password" value="[%password%]"/>
+           </td>
+           <td align="center" vaign="top">
+             <div class="vhod"><a href='#' class='greenButtom' onclick="form_submit1('auth')">Вход</a></div>
+             <br>
+             <a href="/auth/forgot/1" >Забыли пароль?</a>
+           </td>
+        </tr>
+       
+      </table>
+    </form>
+</div>

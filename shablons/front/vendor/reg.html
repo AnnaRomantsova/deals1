@@ -1,0 +1,26 @@
+<div class='centerBlock' >
+    [%message/{
+           <span class="message">
+              [%./message%]
+           </span>
+           <br><br>
+    }%]
+    <p class='date'>Регистрация поставщика</p><br/>
+    <form name='regesty' id='regesty' action="/vendor_auth" method="post">
+      <input type="hidden" name="register">
+      <p class='input'>Эл. почта <br /> <input class='w320' name='e_mail'  value='[%email%]' type='text' placeholder='Введите E-mail'/> </p>
+      <p class='input'>
+              <span class='width320'>
+                      Пароль:  <br /> <input class='w160' name='password' type='password' placeholder='Пароль'/>
+              </span>
+
+      </p>
+      <p class='input'>Наименование организации <br /> <input class='w320' name='name' value='[%name%]' type='text' placeholder='Наименование организации'/></p>
+      <p class='input'>ИНН организации <br /> <input class='w320' name='inn' value='[%inn%]' type='text' placeholder='ИНН организации'/></p>
+      <p class='input'>Вид деятельности <br /> <input class='w320' name='act_category' value='[%act_category%]' type='text' placeholder='Вид деятельности'/></p>
+      <p class='input'>Контактное лицо<br /> <input class='w320' name='fio' value='[%fio%]' type='text' placeholder='Контактное лицо'/></p>
+      <p class='input'>Контактный телефон<br /> <input class='w320' name='tel' value='[%tel%]' type='text' placeholder='Контактный телефон'/></p>
+      <p class='input'>Адрес<br /> <input class='w320' name='adress' value='[%adress%]' type='text' placeholder='Адрес'/></p>
+      <p align='center' class='ischo'><a href='#' onclick="submit_forms('regesty')" class='greenButtom'>Зарегистрироваться</a></p>
+   </form>
+</div>

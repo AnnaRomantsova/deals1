@@ -1,0 +1,41 @@
+<html>
+<head>
+<title></title>
+<LINK rel="stylesheet" type="text/css" href="/_css/back.css">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<script type="text/javascript" src="/_js/func_include.js"></script>
+<script type="text/javascript">
+	include(new Array('/_js/back/func_validTypeFile.js'));
+</script>
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+   <tr><td width="1" height="15" bgcolor="#5177A3"><img src="/_images/back/spacer.gif" width="1" height="1"></td>
+       <td width="100%" background="/_images/back/sky_title_back2.gif" class="title">&nbsp;
+          Администрирование конфигурации сайта</td>
+       <td width="41"><img src="/_images/back/sky_title_right2.gif" width="41" height="21"></td></tr>
+</table>
+<br>
+
+<form method='POST' name='redact' action='' enctype="multipart/form-data">
+
+[%FCKeditor/{
+<p>
+	[%caption%]<br />
+	<input type='radio' name='[%var%]' [%value/? 1 {checked}%] value="1" /> все кнопки
+	<input type='radio' name='[%var%]' [%value/? 2 {checked}%] value="2" /> только загрузка файлов
+	<input type='radio' name='[%var%]' [%value/? 0 {checked}%] value="0" /> textarea
+</p>
+}%]
+
+[%sub/{
+<p>
+	[%caption%]<br />
+	<input type='text' name='[%var%]' value="[%value%]" size="30" class='textinput'>		
+</p>
+}%]
+<input type='submit' class='save_but' value='' />
+<input type='hidden' name='save' value='1' />
+</form>
+</body>
+</html>

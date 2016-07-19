@@ -1,0 +1,389 @@
+/* BACK таблица стилей  */
+BODY {
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        background-color: #ffffff;
+    font-size: 11px;
+        margin-top: 0px;
+}
+
+.window_body {
+        padding-top: 10px;
+}
+/***  Ссылки  ***/
+A {
+        COLOR: #0066CC;
+        TEXT-DECORATION: none;
+}
+A:hover {
+        COLOR: Red; TEXT-DECORATION: underline
+}
+A.menu {
+        font-weight: bold;
+}
+A.page {
+        font-size: 12px;
+        margin-right:4px;
+}
+A:catalog_item {
+        COLOR: #0066CC;
+        TEXT-DECORATION: none;
+        font-size: 11px;
+}
+/***  Таблицы  ***/
+.tbl{
+        background-color: #5275A5;
+}
+.panel{
+    background-color: #5275A5;
+}
+.panel td {
+    background-color: White;
+    padding: 2px 5px 2px 5px;
+    background-color: #d9dfe9;
+    text-align: center;
+}
+
+.tbl td {
+        background-color: White;
+        font-size: 12;
+        padding: 2px 5px 2px 5px;
+}
+.tbl th {
+        background-color: #d9dfe9;
+        color: #213C52;
+        font-size: 13px;
+        font-weight: bold;
+        padding-left: 3px;
+        padding-right: 3px;
+}
+.grey {
+        color: Gray;
+}
+
+.title_menu {
+        border: 1px solid #5177A3;
+        border-collapse: collapse;
+}
+.title_menu td {
+        background-color: #D9DFE9;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 0;
+}
+
+.menu a {
+        font-weight:bold
+}
+.title {
+        font-size: 13px;
+        font-weight: bold;
+}
+
+
+TD {
+        font-size: 11px;
+}
+.tblout{
+        background-color: #5275A5;
+}
+.tdin {
+        background-color: White;
+        font-size: 12;
+        padding: 2px 5px 2px 5px;
+}
+th {
+        background-color: #d9dfe9;
+        color: #213C52;
+        font-size: 13px;
+        font-weight: bold;
+        padding-left: 3px;
+        padding-right: 3px;
+}
+.grey {
+        color: Gray;
+}
+/***  Кнопки  ***/
+.select_but {
+    background-image: url(/_images/back/submit_buttons/button_select.gif);
+    border: none;
+    width: 73;
+    height: 24px;
+    cursor: pointer;
+}
+
+.add_but {
+        background-image: url(/_images/back/button_add.gif);
+        border: none;
+        width: 82px;
+        height: 24px;
+        cursor: pointer;
+}
+.add_sect {
+        background-image: url(/_images/back/button_add_group.gif);
+        border: none;
+        width: 126px;
+        height: 24px;
+        cursor: pointer;
+}
+.add_client {
+        background-image: url(/_images/back/button_add_client.gif);
+        border: none;
+        width: 131px;
+        height: 24px;
+        cursor: pointer;
+}
+
+.save_but {
+        background-image: url(/_images/back/button_save.gif);
+        border: none;
+        width: 89px;
+        height: 24px;
+        cursor: pointer;
+}
+.save2all_but {
+        background-image: url(/_images/back/button_save2all.gif);
+        border: none;
+        width: 140px;
+        height: 24px;
+        cursor: pointer;
+}
+.addsubtp_but {
+        background-image: url(/_images/back/button_add_podrazdel.gif);
+        border: none;
+        width: 151px;
+        height: 24px;
+        cursor: pointer;
+}
+.addtype_but {
+        background-image: url(/_images/back/button_add_razdel.gif);
+        border: none;
+        width: 129px;
+        height: 24px;
+        cursor: pointer;
+}
+.loadcsv_but {
+        background-image: url(/_images/back/button_load_CSV_file.gif);
+        border: none;
+        width: 211px;
+        height: 24px;
+        cursor: pointer;
+}
+.load_but {
+        background-image: url(/_images/back/button_load.gif);
+        border: none;
+        width: 83px;
+        height: 24px;
+        cursor: pointer;
+}
+.addtovar_but {
+        background-image: url(/_images/back/button_add_tovar.gif);
+        border: none;
+        width: 118px;
+        height: 24px;
+        cursor: pointer;
+}
+.addprm_but {
+        background-image: url(/_images/back/button_add_parametr.gif);
+        border: none;
+        width: 140px;
+        height: 24px;
+        cursor: pointer;
+}
+.cnsl_but{
+        background-image: url(/_images/back/button_cancel.gif);
+        border: none;
+        width: 82px;
+        height: 24px;
+        cursor: pointer;
+}
+.yes_but{
+    background-image: url(/_images/back/button_yes.gif);
+    border: none;
+    width: 34px;
+    height: 24px;
+    cursor: pointer;
+}
+.no_but{
+    background-image: url(/_images/back/button_no.gif);
+    border: none;
+    width: 36px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.add_sub_but {
+    background-image: url(/_images/back/button_add_subsection.gif);
+    border: none;
+    width: 144px;
+    height: 24px;
+    cursor: pointer;
+}
+
+
+
+.back_but{
+        background-image: url(/_images/back/button_back.gif);
+        border: none;
+        width: 116px;
+        height: 24px;
+        cursor: pointer;
+}
+.reload_but{
+        background-image: url(/_images/back/button_reload.gif);
+        border: none;
+        width: 77px;
+        height: 24px;
+        cursor: pointer;
+}
+.killall_but{
+        background-image: url(/_images/back/button_delete_tovars.gif);
+        border: none;
+        width: 145px;
+        height: 24px;
+        cursor: pointer;
+}
+.killallt_but{
+    background-image: url(/_images/back/button_killall.gif);
+    border: none;
+    width: 203px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.up_but{
+        background-image: url("/_images/back/button_up.gif");
+        height: 17px;
+        WIDTH: 13px;
+        border: 0px solid;
+        cursor: pointer;
+        background-color: White;
+}
+.ok_but{
+        background-image: url("/_images/back/button_ok.gif");
+        height: 24px;
+        WIDTH: 33px;
+        border: 0px solid;
+        cursor: pointer;
+}
+.down_but{
+        background-image: url("/_images/back/button_down.gif");
+        height: 17px;
+        WIDTH: 13px;
+        border: 0px solid;
+        cursor: pointer;
+        background-color: White;
+}
+.rd_bt {
+        background-image: url(/_images/back/button_edit.gif);
+        border: 1px solid #5275A5;
+        width: 23px;
+        height: 22px;
+        cursor: pointer;
+        background-color: White;
+}
+.fi_bt {
+    background-image: url(/_images/back/menu_price.gif);
+    border: 1px solid #5275A5;
+    width: 23px;
+    height: 22px;
+    cursor: pointer;
+    background-color: White;
+    background-repeat: no-repeat;
+}
+.cu_bt,.cuD_bt {
+    background-image: url(/_images/back/button_cut.gif);
+    border: 1px solid #5275A5;
+    width: 21px;
+    height: 22px;
+    cursor: pointer;
+    background-color: White;
+    background-repeat: no-repeat;
+}
+.cu_bt { background-image: url(/_images/back/button_cut.gif); }
+.cuD_bt { background-image: url(/_images/back/button_cutD.gif); border: 1px solid #999; }
+
+.money_bt {
+        background-image: url(/_images/back/button_money.gif);
+        border: 1px solid #5275A5;
+        width: 23px;
+        height: 22px;
+        cursor: pointer;
+        background-color: White;
+}
+.dl_bt{
+        background-image: url(/_images/back/button_delete.gif);
+        border: 1px solid #5275A5;
+        width: 23px;
+        height: 22px;
+        cursor: pointer;
+        background-color: White;
+}
+b.page {
+        font-size: 12px;
+        margin-right:3px;
+}
+.textinput, .textinput100 {
+        border: 1px solid #B1B6BD;
+        background-color:#F2F4F6;
+        margin-bottom: 2px;
+}
+.textinput100 { width: 100% }
+
+.xinput {
+        border:1px solid #B1B6BD;
+        background-color:#F2F4F6;
+        color: red;
+        font-weight: bold;
+}
+.ac {
+        font-size: 11px;
+        font-family: Tahoma;
+        COLOR: #0066CC;
+}
+ic {
+        margin:2px 4px 0px 0px;
+}
+icc {
+         border:0px;
+         height:9px;
+         WIDTH:9px;
+}
+.actionMenu {
+        color: #374159;
+        width: 200px;
+        font: bold 11px 'Tahoma';
+        border-bottom: 1px solid #B1B6BD;
+        cursor: pointer;
+        padding: 3px;
+}
+.reg_bt{
+        border: 1px solid;
+        width: 135px;
+        height: 19px;
+        cursor: hand;
+        background: #d9dfe9;
+        font-weight: bolder;
+        font-size: 10px;
+}
+
+
+.message { color:#69f }
+.message_error { color:#f33 }
+a.text { color: #000 }
+.small { font-size: 80% }
+.nowrap { white-space: nowrap }
+
+.cut, .cut a { color: #999 }
+.imgSmall {
+        border: 1px solid #000;
+        cursor: pointer;
+        margin: 10px 0 10px 0
+}
+.form td {
+        vertical-align:top;
+        white-space: nowrap;
+        padding: 0 10px 0 0;
+}
+
+.rd {color:red;
+background-color:#F00;}

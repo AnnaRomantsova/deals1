@@ -1,0 +1,74 @@
+<!-- NEWS PANEL -->
+<script>
+
+  function news_submit()  {
+  var el = document.getElementById('from');
+       //alert(el.value);
+       el.value = parseInt(el.value) +1;
+      // alert(el.value);
+       $('#form_news').submit();
+
+  }
+
+ $(document).ready(function(){
+    var options = {
+       target: '#allnews',
+       beforeSubmit: showRequest, // функция, вызываемая перед передачей
+       success: showResponse, // функция, вызываемая при получении ответа
+       timeout: 3000 // тайм-аут
+    };
+
+    $('#form_news').submit(function() {
+       $(this).ajaxSubmit(options);
+       return false;
+    });
+ });
+
+     // вызов перед передачей данных
+    function showRequest(formData, jqForm, options) {
+       var queryString = $.param(formData);
+       //alert($('#from').value);
+       //alert('Вот что мы передаем: \n\n' + queryString);
+    }
+
+    // вызов после получения ответа
+    function showResponse(responseText, statusText)  {
+      // hide_form('new_group');
+      if (responseText.indexOf('theend')>=0) {
+            document.getElementById('escho').style.visible ='none' ;
+            document.getElementById('escho').style.visibility='hidden' ;
+      };
+    //  alert('Статус ответа сервера: ' + statusText + '\n\nТекст ответа сервера: \n' + responseText +  '\n\nЦелевой элемент div обновиться этим текстом.');
+    }
+</script>
+<div id="allnews">
+[%sub/{
+  <p class='date'>[%datetime%] </p>
+    [%sub1/{
+     <div class='newsBlock'>
+               <div class='bodyNews'>
+
+                       [%image1/{<img class='img'  src="[%src%]" width="80" height="80" alt="[%./alt1%]" />}%]
+                       <p><a href="/[%ntype%]/i/[%id%]">[%name%]</a></p>
+                       <p>[%preview%] </p>
+               </div>
+               <p class='linkNews'>
+                       <a href="/[%ntype%]/i/[%id%]"><img src='/i/dalee.png' /></a>
+                       <span class='typevisible'>
+                               <a href="/[%ntype%]"><img src='/i/[%ntype%].png' /></a>
+                               <span class='visible'>Просмотров: [%watch%]</span>
+                       </span>
+               </p>
+     </div>
+   }%]
+}%]
+ <div id="new_news"></div>
+</div>
+
+
+
+  <form method="POST" id="form_news" name="form_news" action="/ajax/mainnews.php" >
+     <input type="hidden" id="from" name="from" value="1">
+  </form>
+ <p align='center' class='ischo'><img src='/i/pokazateshe.png' id="escho" onclick="news_submit();"/></p>
+<!-- /NEWS PANEL -->

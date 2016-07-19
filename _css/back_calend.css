@@ -1,0 +1,29 @@
+/* BACK таблица стилей js-календаря  */
+.calenddays div {
+   width: 20px;
+   height: 20px;
+   font-size: 12px;
+   margin: 2px;
+   float: left;
+   text-align: center;
+   line-height: 20px;
+   background: #fff;
+}
+.calenddays a { color: #000; font-weight: 600; text-decoration: none}
+.calenddays a:hover { color: #d10000 }
+.calenddaysth div { background: #5177a3; color: #fff }
+div.calendselect { background: #d10000 }
+div.calendselect a { color: #fff }
+div.calendselect a:hover { text-decoration: underline; color: #fff }
+
+div.calendcurrent { background: #90abb2 }
+div.calendcurrent a { color: #fff }
+.calenddays div.calendopera { background: #d9dfe9; width: 172px }
+
+.calend, .calend td, .calend select, .calend input { font-size: 12px; font-family: Arial }
+a img { border: none; }
+.calendup { border-collapse: collapse; margin: 2px}
+.calendup td { padding:2px; vertical-align: middle }
+.calendup img { margin: 0 2px 0 2px }
+.calendyear { background: #005f8a; color: #fff; padding-left: 5px; }
+.calend { border: solid 1px #5177a3; overflow: hidden; height:200px; width: 172px; background: #d9dfe9; position: absolute; }
